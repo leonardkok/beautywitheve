@@ -1,5 +1,7 @@
 # Beauty with EVE — Design System
 
+> "Beauty with EVE" is the website name — a personal branding site for **Evelynn Koo**, certified colour analyst. Parent company: deBeau. All styles live in `assets/css/styles.css`.
+
 ## Design Philosophy
 
 Warm, luxurious, and personal. The site uses a soft spring colour palette (yellow, pink, mint, ivory) that mirrors the seasonal colour analysis service itself. Every design decision aims to feel approachable and feminine without being generic — the colours teach by example.
@@ -178,6 +180,44 @@ Panels are absolutely positioned and rotated to create a layered fabric-like dep
 - Content block (`.event-content`) with `<time datetime>` metadata, `<h2>` title, body text
 - Uses `<article>` semantic element
 - Images use `loading="lazy"`
+- Ordered newest-first
+
+---
+
+## Individual Event Page Layout
+
+### Hero (`subpage-hero`)
+
+Three rows of metadata below the nav, no visual column:
+
+```
+[EYEBROW]          ← event type, e.g. "COLOUR ANALYSIS EVENT"
+[H1]               ← partner/venue name only, e.g. "JD Sports"
+Location: …        ← .event-hero__location  (strong label + venue, city, Malaysia)
+Date: …            ← .event-hero__date      (strong label + <time datetime>)
+```
+
+- Eyebrow uses `.hero-drape__eyebrow` (Cinzel, uppercase)
+- H1 uses `.hero-drape__title` (scaled down via `.subpage-hero` override)
+- Location + Date sit in `.event-hero__meta` flex column, `gap: 0.35rem`
+- **Naming rule:** H1 is the partner/venue name only — never append "Beauty with EVE" or "× Evelynn Koo"
+
+### Detail section (`.event-detail`)
+
+Two-column grid — photo left, text right:
+
+```
+[ Photo ]   [ Body copy paragraphs ]
+```
+
+- `.event-detail__inner--two-col` — `grid-template-columns: 1fr 1fr`, `gap: 3.5rem`, `max-width: 1200px`
+- Photo in `.event-detail__media` → `.event-detail__img` (`aspect-ratio: 3/2`, `border-radius: 12px`)
+- Text in `.event-detail__body` — `font-size: 1.05rem`, `line-height: 1.8`
+- Collapses to single column on mobile (≤768px)
+
+### CTA
+
+Standard `.page-cta` band: "Bring colour to your next event" → contact + back to Events.
 
 ---
 
@@ -202,7 +242,7 @@ Centred logo, links split left/right. On scroll: background becomes semi-opaque 
 
 ## Footer
 
-Injected via `script.js` into `<footer id="site-footer">`. Single wave above (`fill="#FFFFF0"`), `#FFFFF0` background. Contains: logo, nav links, social pill links (Instagram, LinkedIn, WhatsApp), copyright.
+Injected via `assets/js/script.js` into `<footer id="site-footer">`. Single wave above (`fill="#FFFFF0"`), `#FFFFF0` background. Contains: logo link to `index.html`, Instagram nav link, tagline, copyright.
 
 > **Note for SEO:** Footer HTML is JS-injected and may not be indexed by all crawlers. See SEO-AI.md for remediation.
 
@@ -224,8 +264,17 @@ Avoid applying glassmorphism on coloured section backgrounds (pink/mint) — it 
 All subpages (About, Services, Events, Portfolio, Contact) share:
 - Inline `--bg: #FFEA99` override in `<style>` tag (overrides any inherited value)
 - `theme-color` meta `#FFEA99`
-- `subpage-hero` class — shorter hero, no visual column, eyebrow + subtitle only
+- `subpage-hero` class — shorter hero, no visual column
 - All content sections use yellow (`#FFEA99`) — no pink or mint on subpages
 - CTA band (`.page-cta`) — yellow background, eyebrow in `#e5791f` warm orange, heading in Playfair Display with italic `<em>`
 - Same nav, footer, wave structure
 - Footer wave: `wave-divider--bg` (yellow) → single path `fill="#FFFFF0"`
+
+### Subpage hero variants
+
+| Page type | Hero content |
+|---|---|
+| About | Eyebrow + H1 + bio paragraph + CTA buttons |
+| Services, Portfolio, Contact | Eyebrow + subtitle paragraph |
+| Events (listing) | H1 (as eyebrow) + subtitle |
+| **Event detail pages** | Eyebrow (type) + H1 (partner name) + Location row + Date row |

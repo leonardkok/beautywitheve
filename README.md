@@ -124,11 +124,12 @@ The site is English-only. Client-side language switching (JS text swapping) is *
 
 | Page | Schema types |
 |------|-------------|
-| index.html | `WebSite` (with `potentialAction: SearchAction`), `LocalBusiness` (address, email, priceRange, aggregateRating, 3× reviews), `FAQPage` (4 Q&A), `BreadcrumbList` |
+| index.html | `WebSite` (with `potentialAction: SearchAction`), `LocalBusiness` (address, email, priceRange, aggregateRating, 3× reviews), `FAQPage` (4 Q&A), `BreadcrumbList` *(note: duplicate WebSite + LocalBusiness schemas — known gap)* |
 | about.html | `Person` (name, jobTitle, description, knowsAbout[], image, worksFor), `BreadcrumbList` |
 | services.html | `Service` with `hasOfferCatalog` → 2× `Offer` (price, priceCurrency, availability), `BreadcrumbList` |
 | portfolio.html | `CollectionPage`, `BreadcrumbList` |
-| events.html | `ItemList`, 2× `Event` (name, startDate, location, organizer, description), `BreadcrumbList` |
+| events.html | `ItemList` (numberOfItems: 2), `BreadcrumbList` |
+| events/[slug].html | `Event` (name, startDate, location, organizer `Person`, description), `BreadcrumbList` (3 levels) |
 | contact.html | `ContactPage` → `LocalBusiness` (email, address), `BreadcrumbList` |
 
 ---
@@ -250,9 +251,23 @@ Mobile hamburger menu (active on screens ≤768px):
 
 ### events.html
 
-- 2 past events: Corporate workshop (Standard Chartered, KL) + Group draping retreat (Penang)
-- Event schema with location and organiser
+- 2 events (newest first):
+  - **JD Sports — Colour Analysis Event** · March 15, 2026 · Pavilion Kuala Lumpur
+  - **Shu Uemura — Colour Analysis Event** · March 14, 2026 · Mid Valley Megamall, Kuala Lumpur
+- `ItemList` JSON-LD schema — `numberOfItems` must match the article count
 - CTA → contact (register interest) and services
+
+### events/ (individual event pages)
+
+Each event has its own page under `events/`. Structure:
+- **Hero:** eyebrow (event type) + `<h1>` (partner/venue name) + Location row + Date row
+- **Detail section:** two-column grid — photo left, text right (`event-detail__inner--two-col`)
+- **CTA:** "Bring colour to your next event" → contact + back to Events
+- Schema: `Event` with `startDate`, `location`, `organizer` (`Person`: Evelynn Koo)
+
+Current event pages:
+- `events/jd-sports-colour-analysis-mar-2026.html`
+- `events/shu-uemura-retail-colour-analysis-mar-2026.html`
 
 ### contact.html
 

@@ -1,5 +1,7 @@
 # Beauty with EVE — Colour Palette
 
+> This is the colour reference for Evelynn Koo's personal branding site. "Beauty with EVE" is the website name; the parent company is deBeau. All colours apply to `assets/css/styles.css`.
+
 ## CSS Variables
 
 | Variable | Value | Usage |
@@ -204,6 +206,19 @@ Content colours for the colour wheel and seasonal swatch demos — not part of t
 | 315–330° | Mauve pink | `#E8A0D0` |
 | 330–345° | Pink | `#F898B8` |
 | 345–360° | Warm pink | `#FF80A0` |
+
+---
+
+## Event Hero Meta Colours
+
+Used in `.event-hero__location` and `.event-hero__date` on individual event detail pages.
+
+| Element | Colour | Token |
+|---|---|---|
+| Label text ("Location:", "Date:") | Dark warm brown | `var(--text-primary)` = `#3d3b2f` |
+| Value text (venue, city, date) | Subdued warm | `var(--text-secondary)` = `#6b6858` |
+
+No new colour variables introduced — reuses existing tokens.
 
 ---
 
