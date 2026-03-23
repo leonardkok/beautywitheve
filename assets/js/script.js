@@ -5,7 +5,7 @@ const footerEl = document.getElementById('site-footer');
 if (footerEl) {
   footerEl.className = 'footer-drape';
   footerEl.innerHTML = `
-    <a href="home.html" class="footer-drape__logo"><span class="logo-prefix">Beauty with </span><span class="logo-eve">EVE</span></a>
+    <a href="index.html" class="footer-drape__logo"><span class="logo-prefix">Beauty with </span><span class="logo-eve">EVE</span></a>
     <nav class="footer-drape__links" aria-label="Footer navigation">
       <a href="#" aria-label="Follow Beauty with EVE on Instagram">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
