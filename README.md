@@ -1,6 +1,21 @@
 # Beauty with EVE — Website
 
-Static 6-page HTML/CSS site for **Beauty with EVE**, a personal colour draping and image consulting business run by Evelynn Koo in Kuala Lumpur, Malaysia.
+## About This Site
+
+**Beauty with EVE** is the name of this website — it is a **personal branding site for Evelynn Koo**, a certified personal colour analyst and image consultant based in Kuala Lumpur, Malaysia.
+
+| | |
+|---|---|
+| **Website name** | Beauty with EVE |
+| **Personal brand** | Evelynn Koo |
+| **Company / group** | deBeau (déBeau Beauty Academy) |
+| **Site purpose** | Personal branding — promoting Evelynn Koo as an individual practitioner |
+
+> "Beauty with EVE" is the site identity, not a business entity or co-brand. Events, collaborations, and services on this site are Evelynn Koo's work. The parent company is deBeau.
+
+---
+
+Static 6-page HTML/CSS site promoting **Evelynn Koo's** personal colour draping and image consulting practice, based in Kuala Lumpur, Malaysia.
 
 ---
 
@@ -253,8 +268,11 @@ Mobile hamburger menu (active on screens ≤768px):
 
 1. Copy `events/_event-template.html` → `events/your-event-slug.html`
 2. Replace all `[SWAP]` placeholders: title, description, slug, date, location, image, body copy
-3. Add a new `<article>` block to `events.html`
-4. Add the new URL to `sitemap.xml`
+3. Add a new `<article>` block to `events.html` (newest first)
+4. Update `numberOfItems` in `events.html` JSON-LD `ItemList` schema
+5. Add the new URL to `sitemap.xml` and bump `events` page `<lastmod>`
+
+**Naming convention for events:** Use the partner/venue name only — do not append "Beauty with EVE" or "× Evelynn Koo" to event titles. The site name appears in `<title>` tags after the pipe (`|`) and as the nav logo — not as a co-brand in event names.
 
 ---
 

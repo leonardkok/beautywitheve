@@ -2790,6 +2790,44 @@ address {
 .event-detail__img { width: 100%; border-radius: 12px; margin-bottom: 2.5rem; aspect-ratio: 3/2; object-fit: cover; }
 .event-detail__body p { font-family: var(--font-sans); line-height: 1.8; color: var(--text-primary); margin-bottom: 1.25rem; font-size: 1.05rem; }
 
+/* ── Event detail: two-column layout (photo left, text right) ── */
+.event-detail__inner--two-col {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+.event-detail__inner--two-col .event-detail__img { margin-bottom: 0; }
+
+/* ── Event hero meta (type / location / date rows) ── */
+.event-hero__meta {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.event-hero__location,
+.event-hero__date {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+.event-hero__location strong,
+.event-hero__date strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-right: 0.3em;
+}
+
+@media (max-width: 768px) {
+  .event-detail__inner--two-col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 /* ── Event listing: read-more link ── */
 .event-readmore {
   display: inline-block;
