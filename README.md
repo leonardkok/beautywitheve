@@ -46,6 +46,7 @@ beautywitheve/
 └── docs/
     ├── COLOURS.md        # Full colour palette reference (140+ swatches)
     ├── DESIGN.md         # Design system — typography, layout, components
+    ├── MOBILE.md         # Mobile rules — breakpoints, touch targets, layout collapse
     ├── PERF.md           # Performance optimisation roadmap
     └── SEO-AI.md         # SEO and AI-scraping audit notes
 ```
@@ -337,5 +338,6 @@ Current event pages:
 
 > Full palette reference with all 140+ named swatches: [`docs/COLOURS.md`](docs/COLOURS.md)
 > Design system guide: [`docs/DESIGN.md`](docs/DESIGN.md)
+> Mobile rules — breakpoints, touch targets, layout: [`docs/MOBILE.md`](docs/MOBILE.md)
 > Performance roadmap: [`docs/PERF.md`](docs/PERF.md)
 > SEO & AI-searchability audit: [`docs/SEO-AI.md`](docs/SEO-AI.md)
