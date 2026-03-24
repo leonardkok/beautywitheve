@@ -172,6 +172,7 @@ img {
 
 .hero-drape {
   min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -229,7 +230,7 @@ img {
 
 .hero-drape__title {
   font-family: var(--font-playfair);
-  font-size: clamp(2.55rem, 5.1vw, 5.1rem);
+  font-size: clamp(2rem, 5.1vw, 5.1rem);
   font-weight: 400;
   line-height: 1.1;
   color: var(--text-primary);
@@ -1896,9 +1897,39 @@ address {
   .hero-drape {
     padding: 5rem 1.5rem 3rem;
     min-height: auto;
+    min-height: auto;
   }
 
   .hero-drape__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .hero-drape__visuals {
+    position: relative;
+    width: 180px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  .hero-drape__aurora,
+  .hero-drape__wheel {
+    display: none;
+  }
+
+  .hero-drape__portrait {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+  }
+
+  .hero-drape__credentials {
     display: none;
   }
 
@@ -1963,6 +1994,46 @@ address {
   .hero-drape__swatch {
     width: 60px;
     height: 85px;
+  }
+}
+
+/* ── Landscape phones ── */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero-drape {
+    min-height: auto;
+    padding: 4rem 2rem 2rem;
+  }
+
+  .hero-drape__inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-drape__right {
+    display: none;
+  }
+}
+
+/* ── Small phones (≤480px) ── */
+@media (max-width: 480px) {
+  .hero-drape {
+    padding: 4rem 1.25rem 2.5rem;
+  }
+
+  .hero-drape__title {
+    font-size: clamp(2rem, 8vw, 2.55rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-drape__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-drape__visuals {
+    width: 140px;
+    height: 175px;
   }
 }
 
@@ -2725,7 +2796,7 @@ address {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.75rem;
+  padding: 0.875rem;
   flex-direction: column;
   gap: 5px;
   z-index: 1100;
