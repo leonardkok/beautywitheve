@@ -59,6 +59,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -276,7 +278,8 @@ img {
   font-family: var(--font-playfair);
   font-size: 1.05rem;
   font-weight: 500;
-  padding: 0.8rem 2.5rem;
+  padding: 0.875rem 2.5rem;
+  min-height: 44px;
   border-radius: 100px;
   background: var(--text-primary);
   color: var(--bg);
@@ -1138,6 +1141,7 @@ img {
   font-size: 0.82rem;
   font-weight: 500;
   padding: 0.9rem 2.5rem;
+  min-height: 44px;
   border-radius: 100px;
   background: var(--bg);
   color: var(--text-primary);
@@ -1984,6 +1988,32 @@ address {
   .contact-submit {
     width: 100%;
   }
+
+  /* Full-width buttons on mobile */
+  .hero-drape__btn:not(.hero-drape__btn--secondary) {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cta-drape__actions {
+    flex-direction: column;
+  }
+
+  .cta-drape__btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Section padding fixes for narrow phones */
+  .debeau-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .why-drape {
+    padding: 4rem 1.25rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -2089,7 +2119,7 @@ address {
 
 /* ── Events page ── */
 .event-meta {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent);
@@ -2517,7 +2547,7 @@ address {
 }
 
 .portfolio-case__season {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--accent);
