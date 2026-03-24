@@ -59,7 +59,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  word-break: break-word;
   overflow-wrap: break-word;
 }
 
@@ -3219,4 +3218,51 @@ address {
   .event-hero__meta {
     margin-top: 0.5rem;
   }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Late responsive overrides
+   (must appear AFTER base styles for about / why-drape / debeau
+    sections which are declared later in this file)
+   ───────────────────────────────────────────────────────────── */
+
+/* About hero: collapse to single column */
+@media (max-width: 768px) {
+  .about-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Sections with large horizontal padding — narrow phone fix */
+@media (max-width: 768px) {
+  .debeau-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .why-drape {
+    padding: 4rem 1.25rem;
+  }
+
+  .why-drape__grid {
+    gap: 1rem;
+  }
+}
+
+/* Image placeholder: gives broken/missing images a visible container */
+.hero-drape__visuals,
+.about-hero__visual,
+.portfolio-case__media,
+.event-img-wrap {
+  background: rgba(61, 59, 47, 0.06);
+  border-radius: 12px;
+}
+
+.hero-drape__visuals {
+  border-radius: 50%;
+}
+
+.about-hero__visual {
+  border-radius: 20px;
+  min-height: 320px;
 }
