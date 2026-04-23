@@ -55,38 +55,43 @@ Waves are SVG paths inside a `<div class="wave-divider [modifier]">`.
 
 **Rule:** CSS background of the wave div = colour of the section **above**. SVG `fill` = colour of the section **below**.
 
-| CSS class | Background colour |
-|---|---|
-| `wave-divider--yellow` | `#FFEA99` |
-| `wave-divider--pink` | `#FFCDCF` |
-| `wave-divider--linen` | `var(--bg)` (yellow) |
-| `wave-divider--surface` | `var(--bg-tertiary)` (mint) |
-| `wave-divider--ivory` | `#FFFFF0` |
-| `wave-divider--bg` | `var(--bg)` (yellow) |
+| CSS class | Background colour | Notes |
+|---|---|---|
+| `wave-divider--yellow` | `#FFEA99` | |
+| `wave-divider--pink` | `#FFCDCF` | |
+| `wave-divider--linen` | `var(--bg)` (yellow) | |
+| `wave-divider--surface` | `var(--bg-tertiary)` (mint) | |
+| `wave-divider--ivory` | `#FFFFF0` | |
+| `wave-divider--bg` | `var(--bg)` (yellow) | |
+| `wave-divider--hero` | `transparent` | Hero-specific: height 250px, `margin-top: -200px`, overlaps the hero section; SVG has pink drop-shadow glow (`rgba(255,205,207,0.8)`) |
 
 ---
 
-## Hero Visual — Spring Colour Wheel
+## Hero Right Column — Credentials + Portrait
 
-The hero right column features a layered visual:
+The hero right column (`.hero-drape__right`) contains two stacked layers:
 
 ### Structure (z-index order, back to front)
-1. **`.hero-drape__aurora`** (z-index 0) — container for 16 aurora glow spots
-2. **`.hero-drape__portrait`** (z-index 2) — Evelynn's portrait, `object-fit: contain`
-3. **`.hero-drape__wheel`** (z-index 3) — 380px spring colour wheel ring
+1. **`.hero-drape__visuals`** — flex container, `min-height: 600px`, holds the portrait
+2. **`.hero-drape__portrait`** (z-index 2) — Evelynn's portrait image, absolutely positioned
+3. **`.hero-drape__credentials`** (z-index 3) — 3-item credential card, absolutely positioned over the visuals
 
-### Colour wheel
-- 24 hard-edged segments × 15° via `conic-gradient`
-- Spring palette flowing: coral → peach → apricot → yellow → lime → green → mint → turquoise → sky blue → periwinkle → lavender → pink → coral
-- Transparent centre cut via `mask: radial-gradient(circle at center, transparent 135px, black 136px)`
-- Inner inward glow via `::before` pseudo-element with `box-shadow`
+### Credentials card (`.hero-drape__credentials`)
+- Positioned `top: 40%; left: 0%; transform: translateY(-50%)`, width `380px`, z-index 3
+- Three `.credential-item` blocks separated by `.credential-divider` (100×1px rule, `#c4b8a0`)
+- `.credential-title` — Playfair Display, `clamp(1.2rem, 1.6vw, 1.5rem)`, weight 600, colour `#8b5a6b`
+- `.credential-desc` — `clamp(0.75rem, 0.85vw, 0.85rem)`, colour `#5c554b`, line-height 1.45
+- Each `.credential-item` and `.credential-divider` carries `class="fade-in"` with staggered `transition-delay` (0.1s, 0.25s, 0.4s, 0.55s, 0.7s)
+- Current three credentials: "Empowered Over 200 Individuals", "Certified Personal Colour Analyst", "Senior Corporate Consultant"
 
-### Aurora glow spots
-16 elongated ribbon ellipses (`145×48px`, `blur(26px)`) positioned around the ring at 22.5° intervals. Each:
-- Matches the spring colour of the wheel segment it sits on
-- Rotated tangentially to the ring (`--rot` CSS variable, θ + 90°)
-- Pulses independently via two staggered animations: `aurora-pulse` (opacity) + `aurora-drift` (scale + translateY)
-- Peak opacity: `0.85`, durations vary 2.1s–3.7s with staggered delays
+### Portrait (`.hero-drape__portrait`)
+- `position: absolute; bottom: 0; left: 70%; transform: translateX(-50%)`
+- `width: 100%; height: 120%` — overflows the container upward, no max constraints
+- `object-fit: contain; object-position: bottom center`
+- `drop-shadow(0 4px 12px rgba(61,59,47,0.15))`
+- Source: `assets/images/common/portfolio.png`
+
+> **CSS legacy:** `@keyframes aurora-pulse`, `@keyframes aurora-drift`, `.aurora-spot`, and `.hero-drape__wheel` rules remain in `styles.css` but are not applied to any element in the current HTML. Safe to remove in a future cleanup pass.
 
 ---
 
@@ -139,8 +144,8 @@ Layout: two-column inside `.contact-hero__inner` — info column left, form colu
 - `font-weight: 700`, `font-size: 0.75rem`, uppercase, `letter-spacing: 0.1em`, `color: #000`
 
 ### Preset message pills (`.contact-preset`)
-- 4 pills: "Book a session", "Corporate workshop", "Learn more first", "Ask a question"
-- Click pre-fills the message textarea via JS; no persistent active state
+- 6 pills: "Signature Draping Session", "Retail Events", "Drape Party", "Team Workshop", "Corporate Consultation", "Other Enquiries"
+- Click pre-fills the message textarea via JS using `data-msg` attribute; no persistent active state
 - Hover: black fill, `#c6985a` gold text
 
 ### Honeypot
@@ -225,12 +230,12 @@ Standard `.page-cta` band: "Bring colour to your next event" → contact + back 
 
 | Animation | Element | Behaviour |
 |---|---|---|
-| `rainbow-shift` (20s linear infinite) | `hero-drape__title em` ("true colours"), `cta-drape__headline em` ("your colours?") | Slow cycling rainbow gradient via `background-clip: text` |
-| `aurora-pulse` (2.1–3.7s, staggered) | `.aurora-spot` | Opacity 0 → 0.85 → 0 |
-| `aurora-drift` (4.1–6.1s, staggered) | `.aurora-spot` | Scale 1 → 1.12 + translateY -5px |
-| `fade-in` | Section content | Scroll-triggered opacity + translateY via JS IntersectionObserver |
+| Credential stagger | `.credential-item`, `.credential-divider` | Each has `class="fade-in"` with `transition-delay` 0.1s → 0.7s; driven by JS IntersectionObserver |
+| `fade-in` | Section content, credential items | Scroll-triggered opacity + translateY via JS IntersectionObserver |
 | FAQ accordion | `.faq-drape__item` | `max-height` expand, chevron rotate |
 | Nav scroll | `.nav` | Background + shadow appear on scroll |
+
+> **CSS-defined but unused:** `@keyframes rainbow-shift`, `aurora-pulse`, and `aurora-drift` remain in `styles.css` but are not applied to any element in the current HTML.
 
 ---
 

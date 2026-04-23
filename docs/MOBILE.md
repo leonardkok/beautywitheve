@@ -66,7 +66,7 @@ All heading sizes use `clamp()` — no breakpoint jumps:
 
 | Component | Desktop | Mobile |
 |---|---|---|
-| Hero | 2-column flex | Stacked, visuals below |
+| Hero | 2-column flex (left: copy, right: portrait + credentials) | `display: contents` on both columns; portrait first, credentials last |
 | About hero | 2-column grid | 1 column |
 | About philosophy | 2-column grid | 1 column |
 | Contact hero | 2-column grid | 1 column |
@@ -122,16 +122,17 @@ Large section padding is reduced at `≤768px`:
 
 ---
 
-## Hero Colour Wheel
+## Hero Mobile Layout
 
-- `.hero-drape__wheel` is `380px` fixed (desktop) with aurora glow spots positioned absolutely around it
-- The aurora container is `460px` wide — wider than any mobile screen
-- At `≤768px`: `.hero-drape__right` (the entire visual column + credentials card) is `display: none` — the aurora, wheel, portrait, and credentials are hidden on mobile
-- At `≤400px`: `.hero-drape__swatch` elements reduce to `60×85px`
+At `≤768px`, the hero switches from two-column flex to a single reordered column:
 
-**Why hidden on mobile:** The wheel and aurora spots use absolute pixel positioning designed for a ~460px container. Combined with `overflow: hidden` on `.hero-drape`, they clip completely on narrow screens, leaving a blank gap. Hiding the column gives a clean text-only hero.
+- `.hero-drape__left` and `.hero-drape__right` both become `display: contents` — their children are pulled into the parent flex flow and ordered explicitly
+- Portrait (`.hero-drape__visuals`) → `order: 1` — appears first (top of hero), height 340px, `overflow: hidden`
+- Eyebrow → `order: 2`, Title → `order: 3`, Subtitle → `order: 4`, CTA button → `order: 5`, Brands → `order: 6`
+- Credentials (`.hero-drape__credentials`) → `order: 7` — appears last below the brands, reset from absolute to normal flow (`position: relative`, `top: auto`, `width: 100%`)
+- Portrait: `max-width: 300px`, `height: 340px`, `left: 50%` (centred), `bottom: -40px`
 
-**Do not** attempt to scale or reposition the aurora spots individually for mobile — they are tightly coupled to the wheel geometry and must be redesigned as a unit if a mobile visual is ever needed.
+> **CSS legacy:** `.hero-drape__wheel` and `.hero-drape__aurora` still have mobile overrides in `styles.css` but those elements are no longer present in the HTML — safe to remove in a future cleanup pass.
 
 ---
 

@@ -38,7 +38,13 @@ beautywitheve/
 │   │   └── styles.css    # Shared stylesheet (all pages)
 │   ├── js/
 │   │   └── script.js     # Shared JavaScript + footer component
-│   └── images/           # Local/static images (favicon fallback, OG, etc.)
+│   └── images/
+│       └── common/       # Shared images used across pages
+│           ├── evelynn.png           # Portrait (alternate crop)
+│           ├── portfolio.png         # Hero portrait (primary — used in index.html)
+│           ├── portfolio.jpeg        # Portfolio case study image
+│           ├── portfolio-placeholder.png  # Placeholder for portfolio slots
+│           └── event-placeholder.png     # Placeholder for event image slots
 │
 ├── events/
 │   └── _event-template.html  # Template for individual event pages
@@ -274,7 +280,7 @@ Current event pages:
 
 - Two-column layout: contact details + enquiry form
 - `<address>` with email contact
-- Preset message buttons (Signature Session, Retail Events, Drape Party, Team Workshop, Other)
+- 6 preset message pills: Signature Draping Session, Retail Events, Drape Party, Team Workshop, Corporate Consultation, Other Enquiries — each pre-fills the textarea via `data-msg` on click
 - Honeypot spam protection
 - Native HTML5 form validation (`required` on all fields, `type="email"`)
 
