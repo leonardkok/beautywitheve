@@ -3017,13 +3017,16 @@ address {
 }
 
 .why-drape {
-  padding: 6rem 2rem;
+  margin-top: -80px;
+  position: relative;
+  z-index: 4;
+  padding: 1.5rem 2rem 6rem;
   background: var(--bg-secondary);
 }
 
 @media (max-width: 768px) {
   .why-drape {
-    padding: 3rem 1.5rem;
+    padding: 1.5rem 1.5rem 4rem;
   }
 }
 
