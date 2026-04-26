@@ -1,4 +1,20 @@
 User-agent: *
 Allow: /
 
+# AI crawler opt-in
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleExtended
+Allow: /
+
 Sitemap: https://beautywitheve.com/sitemap.xml
