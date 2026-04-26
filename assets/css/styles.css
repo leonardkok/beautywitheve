@@ -3363,6 +3363,35 @@ address {
   padding-top: 1.5rem;
 }
 
+.service-package__organiser > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  user-select: none;
+  margin-bottom: 0;
+}
+
+.service-package__organiser > summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-package__organiser > summary .organiser-chevron {
+  flex-shrink: 0;
+  color: var(--accent);
+  transition: transform 0.22s ease;
+}
+
+.service-package__organiser[open] > summary .organiser-chevron {
+  transform: rotate(180deg);
+}
+
+.service-package__organiser > summary + * {
+  margin-top: 0.85rem;
+}
+
 .service-package__organiser-heading {
   font-size: 0.68rem;
   text-transform: uppercase;
