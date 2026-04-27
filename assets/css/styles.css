@@ -3372,10 +3372,11 @@ address {
   gap: 0.5rem;
   user-select: none;
   margin-bottom: 0;
-  padding: 0.6rem 0.9rem;
+  padding: 0.55rem 0.9rem;
   background: rgba(196, 176, 110, 0.10);
   border: 1px solid rgba(196, 176, 110, 0.35);
   border-radius: 8px;
+  white-space: nowrap;
   transition: background 0.18s ease, border-color 0.18s ease;
 }
 
