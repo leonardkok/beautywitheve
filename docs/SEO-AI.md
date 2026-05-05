@@ -2,47 +2,50 @@
 
 ---
 
-## SEO Suggestions
+## SEO Suggetions & Tracking
 
-| # | Issue | Impact | Priority |
+| # | Issue | Impact | Status |
 |---|---|---|---|
-| 1 | **Missing `<h1>` on 3 pages** — services.html, events.html, portfolio.html have no H1. The eyebrow `<div>` holds the page title but isn't semantic. Google uses H1 as a primary ranking signal. | High — hurts keyword relevance for those pages | **Critical** |
-| 2 | **Footer is JavaScript-rendered** — `<footer id="site-footer"></footer>` is empty in HTML; content injected by `script.js`. Googlebot does execute JS but with delay and lower priority. Other crawlers (Bing, Yandex) may miss it entirely. Footer contains nav links, social links, and business info. | High — internal links and business info invisible to some crawlers | **High** |
-| 3 | **Sitemap URLs don't match actual page URLs** — sitemap lists `beautywitheve.com/services` but actual files are `services.html`. If server doesn't rewrite these, Google will get 404s from the sitemap. | High — sitemap becomes useless if URLs don't resolve | **High** |
-| 4 | **Duplicate JSON-LD schemas on home.html** — two `WebSite` schemas (lines 23–35 and 67–69) and two `LocalBusiness` schemas (lines 36–55 and 114–142). Google may get confused or ignore duplicates. | Medium — can cause rich result issues | **Medium** |
-| 5 | **Same OG image across all 6 pages** — every page uses the same Unsplash photo. Social sharing looks identical regardless of which page is shared. Each page should have a relevant preview image. | Medium — hurts social click-through rate | **Medium** |
-| 6 | **No `<h1>` text for subpage heroes** — eyebrow text ("Workshops & Gatherings", "Draping & Consulting", "Client Gallery") acts as page title visually but uses a `<div>`. Should be or contain an `<h1>`. | Medium — missing primary heading signal | **Medium** |
-| 7 | **Missing `<article>` on portfolio cases** — portfolio items are `<div class="portfolio-case">` but semantically they're individual pieces of content. `<article>` helps crawlers understand content boundaries. | Low — minor semantic improvement | **Low** |
-| 8 | **No internal linking from footer** — footer links (Privacy, social) use `href="#"` placeholders. Real internal links in the footer would distribute page authority. | Low — missed internal link equity | **Low** |
-| 9 | **Contact page form has no `action`** — `<form method="post">` with no `action` attribute. The form doesn't work — potential bounce rate impact. | Low — UX/conversion issue | **Low** |
+| 1 | **Missing `<h1>` on 3 pages** — services.html, events.html, portfolio.html have no H1. The eyebrow `<div>` holds the page title but isn't semantic. | High | Resolved ✓ |
+| 2 | **Footer is JavaScript-rendered** — Content was injected by `script.js`. Now moved to static HTML in each page for full crawler/AI visibility. | High | Resolved ✓ |
+| 3 | **Sitemap URLs don't match actual page URLs** — Updated `sitemap.xml` to use clean URLs to match canonical tags. | High | Resolved ✓ |
+| 4 | **Duplicate JSON-LD schemas on index.html** — Consolidated `LocalBusiness` and `WebSite` blocks into single comprehensive objects. | Medium | Resolved ✓ |
+| 5 | **Same OG image across all pages** — Assigned unique, relevant Unsplash images for about, portfolio, and services pages. | Medium | Resolved ✓ |
+| 6 | **No `<h1>` text for subpage heroes** — Hero titles converted to semantic `<h1>` tags. | Medium | Resolved ✓ |
+| 7 | **Missing `<article>` on portfolio cases** — Portfolio items converted from generic `<div>` to semantic `<article>` tags. | Low | Resolved ✓ |
+| 8 | **No internal linking from footer** — Footer links updated with real destinations (Instagram) and static content. | Low | Resolved ✓ |
+| 9 | **Contact page form has no functional action** — Form action updated to `https://formspree.io/evelynnkoo@gmail.com`. | Low | Resolved ✓ |
 
 ---
 
-## AI Scraping / LLM Optimization Suggestions
+## AI Scraping / LLM Optimization Tracking
 
-| # | Issue | What to do | Impact |
+| # | Issue | What to do | Status |
 |---|---|---|---|
-| 1 | **No `llms.txt` file** | Create `/llms.txt` — the emerging standard (like robots.txt for AI). Should describe your site, services, location, and key pages in plain text. AI crawlers (ChatGPT, Perplexity, Claude) look for this file. | **High** — helps AI understand and cite your site accurately |
-| 2 | **Footer invisible to AI crawlers** | Move footer HTML into each page's HTML (not JS-injected). Most AI crawlers don't execute JavaScript — they parse raw HTML only. | **High** — AI crawlers miss your business name, location, social links |
-| 3 | **robots.txt has no AI bot rules** | Add explicit rules for AI crawlers: `User-agent: GPTBot`, `User-agent: ClaudeBot`, `User-agent: PerplexityBot`, etc. Either `Allow` to be discoverable, or `Disallow` paths you want protected. | **High** — controls which AI systems can index your content |
-| 4 | **No `llms-full.txt`** | Create `/llms-full.txt` with detailed business info: services, pricing, location, credentials, FAQs — all in clean markdown. This is what AI models ingest for deep understanding. | **High** — enables AI to give accurate, detailed answers about your business |
-| 5 | **Missing H1 tags (same as SEO #1)** | AI crawlers use heading hierarchy to understand page structure and topic. Missing H1 means the crawler can't easily identify what the page is about. | **Medium** — AI may misclassify page topic |
-| 6 | **Missing `SpeakableSpecification` in structured data** | Add `speakable` property to key JSON-LD schemas — tells AI voice assistants (Google Assistant, Alexa) which text sections are suitable for reading aloud. | **Medium** — enables voice search visibility |
-| 7 | **No `/.well-known/ai-plugin.json`** | Not critical for a business site (mainly for API/tool sites), but a simple manifest can help AI systems discover your service type. | **Low** |
-| 8 | **Image alt text** | Already descriptive, keyword-rich, and unique per image. No action needed. | Already done ✓ |
-| 9 | **Structured data coverage** | FAQPage, LocalBusiness, BreadcrumbList, ContactPage, Service, Event schemas already present. These directly feed AI knowledge graphs. | Already done ✓ |
+| 1 | **No `llms.txt` file** | Create `/llms.txt` to describe site, services, and location for AI crawlers. | Resolved ✓ |
+| 2 | **Footer invisible to AI crawlers** | Move footer HTML into each page's HTML (done in SEO #2). | Resolved ✓ |
+| 3 | **robots.txt has no AI bot rules** | Added explicit rules for AI crawlers (GPTBot, ClaudeBot, etc.). | Resolved ✓ |
+| 4 | **No `llms-full.txt`** | Created `/llms-full.txt` with detailed services, pricing, and full FAQs in markdown. | Resolved ✓ |
+| 5 | **Missing H1 tags** | Improved heading hierarchy across all subpages (done in SEO #1). | Resolved ✓ |
+| 6 | **Missing `SpeakableSpecification`** | Added `speakable` property to JSON-LD schemas on Home and Services pages. | Resolved ✓ |
+| 7 | **FAQ Distribution** | Added relevant FAQ schema blocks to the `services.html` page. | Resolved ✓ |
 
 ---
 
-## Priority Action Plan
+## Priority Action Plan (May 2026 Update)
 
-### Do first (biggest impact)
-1. Add `<h1>` to services, events, portfolio pages
-2. Create `llms.txt` and `llms-full.txt`
-3. Move footer HTML from JS into each page's HTML
-4. Add AI bot rules to `robots.txt`
+### Completed
+- [x] Fix Sitemap/Canonical Mismatch (Task #1)
+- [x] Functional Contact Form (Task #2)
+- [x] Merge Duplicate Schema (Task #3)
+- [x] Unique Social Previews (Task #5)
+- [x] Create `llms-full.txt` (Task #6)
+- [x] Voice Search Optimization (Task #7)
+- [x] Improve Article Semantics (Task #8)
+- [x] FAQ Distribution (Task #9)
+- [x] Documentation Cleanup (Task #10)
 
-### Do next
-5. Fix sitemap URL mismatch (`.html` vs clean URLs)
-6. Merge duplicate JSON-LD on home page
-7. Use unique OG images per page
+### Next Steps (Low Priority)
+- [ ] Monitor search console for rich result validation.
+- [ ] Add `SpeakableSpecification` to About page if voice traffic increases.
+- [ ] Consider generating local `og:image` assets to replace Unsplash URLs for faster loading.
