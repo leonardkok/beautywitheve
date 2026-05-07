@@ -41,6 +41,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="alternate" hreflang="en-MY" href="https://beautywitheve.com/events">
+  <link rel="alternate" hreflang="zh" href="https://beautywitheve.com/events?lang=zh">
+  <link rel="alternate" hreflang="ms" href="https://beautywitheve.com/events?lang=ms">
   <link rel="alternate" hreflang="x-default" href="https://beautywitheve.com/events">
   <style>
     :root {
@@ -76,32 +78,42 @@
 </head>
 
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="skip.main">Skip to main content</a>
 
   <nav class="nav" id="nav" aria-label="Main navigation">
     <div class="nav__left">
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="events.html" class="active">Events</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="events.html" class="active" data-i18n="nav.events">Events</a>
     </div>
     <a href="index.html" class="nav__logo"><span class="nav__logo-prefix">Beauty with </span><span
         class="nav__logo-eve">EVE</span></a>
     <div class="nav__right">
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </div>
-    <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+    <div class="nav__lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Open navigation menu" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="nav-mobile">
       <span></span><span></span><span></span>
     </button>
   </nav>
   <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="events.html" class="active">Events</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="events.html" class="active" data-i18n="nav.events">Events</a>
+    <a href="services.html" data-i18n="nav.services">Services</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="nav__mobile-lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
   </div>
 
   <main id="main-content">
@@ -109,8 +121,8 @@
     <!-- ── HERO ── -->
     <section class="hero-drape subpage-hero">
       <div class="hero-drape__inner subpage-hero__inner">
-        <h1 class="hero-drape__eyebrow">Workshops & Gatherings</h1>
-        <p class="hero-drape__subtitle">
+        <h1 class="hero-drape__eyebrow" data-i18n="events.hero.eyebrow">Workshops & Gatherings</h1>
+        <p class="hero-drape__subtitle" data-i18n="events.hero.subtitle">
           Past workshops and styling sessions held across Malaysia.
         </p>
       </div>
@@ -132,15 +144,15 @@
           </div>
           <div class="event-content">
             <header>
-              <div class="event-meta"><time datetime="2026-03-15">March 15, 2026</time> • Kuala Lumpur</div>
+              <div class="event-meta"><time datetime="2026-03-15" data-i18n="events.jd.date">March 15, 2026</time> • <span data-i18n="events.jd.location">Kuala Lumpur</span></div>
               <h2 class="event-title">
-                <a href="events/jd-sports-colour-analysis-mar-2026.html">JD Sports — Colour Analysis Event</a>
+                <a href="events/jd-sports-colour-analysis-mar-2026.html" data-i18n="events.jd.title">JD Sports — Colour Analysis Event</a>
               </h2>
             </header>
-            <p class="event-body">
+            <p class="event-body" data-i18n="events.jd.desc">
               A colour analysis activation at JD Sports' Pavilion Kuala Lumpur store — guests received personal colour consultations and activewear shade recommendations matched to their season.
             </p>
-            <a href="events/jd-sports-colour-analysis-mar-2026.html" class="event-readmore">Read more →</a>
+            <a href="events/jd-sports-colour-analysis-mar-2026.html" class="event-readmore" data-i18n="events.readmore">Read more →</a>
           </div>
         </article>
 
@@ -156,15 +168,15 @@
           </div>
           <div class="event-content">
             <header>
-              <div class="event-meta"><time datetime="2026-03-14">March 14, 2026</time> • Kuala Lumpur</div>
+              <div class="event-meta"><time datetime="2026-03-14" data-i18n="events.shu.date">March 14, 2026</time> • <span data-i18n="events.shu.location">Kuala Lumpur</span></div>
               <h2 class="event-title">
-                <a href="events/shu-uemura-retail-colour-analysis-mar-2026.html">Shu Uemura — Colour Analysis Event</a>
+                <a href="events/shu-uemura-retail-colour-analysis-mar-2026.html" data-i18n="events.shu.title">Shu Uemura — Colour Analysis Event</a>
               </h2>
             </header>
-            <p class="event-body">
+            <p class="event-body" data-i18n="events.shu.desc">
               A retail colour analysis activation at Shu Uemura's Mid Valley Megamall boutique — guests received personal colour consultations and product shade recommendations matched to their season.
             </p>
-            <a href="events/shu-uemura-retail-colour-analysis-mar-2026.html" class="event-readmore">Read more →</a>
+            <a href="events/shu-uemura-retail-colour-analysis-mar-2026.html" class="event-readmore" data-i18n="events.readmore">Read more →</a>
           </div>
         </article>
 
@@ -174,18 +186,18 @@
 
     <!-- ── CTA ── -->
     <section class="page-cta fade-in">
-      <p class="about-eyebrow page-cta__eyebrow">Attend the next session</p>
-      <h2 class="about-heading page-cta__heading">Experience colour analysis <em>in person</em></h2>
+      <p class="about-eyebrow page-cta__eyebrow" data-i18n="events.cta.eyebrow">Attend the next session</p>
+      <h2 class="about-heading page-cta__heading" data-i18n-html="events.cta.heading">Experience colour analysis <em>in person</em></h2>
       <div class="page-cta__actions">
-        <a href="contact.html" class="hero-drape__btn">Register your interest</a>
-        <a href="services.html" class="hero-drape__btn hero-drape__btn--outline-dark">Browse our services</a>
+        <a href="contact.html" class="hero-drape__btn" data-i18n="events.cta.btn1">Register your interest</a>
+        <a href="services.html" class="hero-drape__btn hero-drape__btn--outline-dark" data-i18n="events.cta.btn2">Browse our services</a>
       </div>
     </section>
 
     <!-- ── WAVE ── -->
     <div class="wave-divider wave-divider--bg">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none" aria-hidden="true">
-        
+
         <path d="M0 25 C360 55 720 10 1080 45 C1260 62 1380 35 1440 25 L1440 80 L0 80Z" fill="#FFFFF0" />
       </svg>
     </div>
@@ -195,16 +207,17 @@
   <!-- ── FOOTER ── -->
   <footer class="footer-drape" id="site-footer">
     <a href="index.html" class="footer-drape__logo"><span class="logo-prefix">Beauty with </span><span class="logo-eve">EVE</span></a>
-    <nav class="footer-drape__links" aria-label="Footer navigation">
-      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" rel="noopener noreferrer" target="_blank">
+    <nav class="footer-drape__links" aria-label="Footer navigation" data-i18n-aria-label="footer.nav_aria">
+      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" data-i18n-aria-label="footer.instagram_aria" rel="noopener noreferrer" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        Instagram
+        <span data-i18n="footer.instagram">Instagram</span>
       </a>
     </nav>
-    <div class="footer-drape__tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
-    <div class="footer-drape__copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
+    <div class="footer-drape__tagline" data-i18n="footer.tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
+    <div class="footer-drape__copy" data-i18n="footer.copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
   </footer>
 
+  <script src="assets/js/translations.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </body>
 

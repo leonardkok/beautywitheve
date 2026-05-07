@@ -3858,3 +3858,97 @@ address {
     gap: 2rem;
   }
 }
+
+/* ════════════════════════════════════════════════
+   Language switcher (EN · 中文 · BM)
+   ════════════════════════════════════════════════ */
+.nav__lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 1.25rem;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.nav.scrolled .nav__lang {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.nav__lang-btn {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-family: var(--font-sans, inherit);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  transition: color 0.2s ease, background 0.2s ease;
+  line-height: 1;
+}
+
+.nav__lang-btn[lang="zh"] {
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+
+.nav__lang-btn:hover {
+  color: var(--text-primary);
+}
+
+.nav__lang-btn.is-active {
+  background: var(--text-primary);
+  color: var(--bg);
+}
+
+.nav__lang-btn:focus-visible {
+  outline: 2px solid var(--accent, var(--text-primary));
+  outline-offset: 2px;
+}
+
+/* Mobile language switcher (inside slide-out menu) */
+.nav__mobile-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  margin-top: 1rem;
+}
+
+.nav__mobile-lang .nav__lang-btn {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.nav__mobile-lang .nav__lang-btn[lang="zh"] {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .nav__lang {
+    margin-left: 0.75rem;
+  }
+  .nav__lang-btn {
+    padding: 0.25rem 0.55rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop language pill on mobile — it appears in the slide-out menu */
+  .nav > .nav__lang {
+    display: none;
+  }
+}

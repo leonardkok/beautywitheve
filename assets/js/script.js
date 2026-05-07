@@ -1,5 +1,75 @@
 /* Beauty with EVE — Shared JS */
 
+/* ── i18n: Language switcher ── */
+(function () {
+  const SUPPORTED = ['en', 'zh', 'ms'];
+  const STORAGE_KEY = 'bwe.lang';
+  const HTML_LANG = { en: 'en-MY', zh: 'zh', ms: 'ms' };
+
+  function detectLang() {
+    const url = new URLSearchParams(window.location.search).get('lang');
+    if (url && SUPPORTED.includes(url)) return url;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored && SUPPORTED.includes(stored)) return stored;
+    } catch (e) { /* localStorage may be unavailable */ }
+    const browser = (navigator.language || '').toLowerCase();
+    if (browser.startsWith('zh')) return 'zh';
+    if (browser.startsWith('ms')) return 'ms';
+    return 'en';
+  }
+
+  function applyLang(lang) {
+    const dict = (window.BWE_TRANSLATIONS && window.BWE_TRANSLATIONS[lang]) || {};
+    document.documentElement.setAttribute('lang', HTML_LANG[lang] || lang);
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria-label');
+      if (dict[key] != null) el.setAttribute('aria-label', dict[key]);
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
+    });
+
+    document.querySelectorAll('.nav__lang-btn').forEach(btn => {
+      const isActive = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
+  function setLang(lang) {
+    if (!SUPPORTED.includes(lang)) lang = 'en';
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignore */ }
+    applyLang(lang);
+  }
+
+  // Public API for inline scripts (e.g. contact form presets)
+  window.BWE_I18N = {
+    getLang: detectLang,
+    setLang: setLang
+  };
+
+  // Wire up button clicks
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.nav__lang-btn');
+    if (!btn) return;
+    setLang(btn.getAttribute('data-lang'));
+  });
+
+  // Apply on initial load
+  applyLang(detectLang());
+})();
+
 // Nav scroll state
 const nav = document.getElementById('nav');
 if (nav) {

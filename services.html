@@ -72,6 +72,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="alternate" hreflang="en-MY" href="https://beautywitheve.com/services">
+  <link rel="alternate" hreflang="zh" href="https://beautywitheve.com/services?lang=zh">
+  <link rel="alternate" hreflang="ms" href="https://beautywitheve.com/services?lang=ms">
   <link rel="alternate" hreflang="x-default" href="https://beautywitheve.com/services">
   <style>
     :root {
@@ -135,32 +137,42 @@
 </head>
 
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="skip.main">Skip to main content</a>
 
   <nav class="nav" id="nav" aria-label="Main navigation">
     <div class="nav__left">
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="events.html">Events</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="events.html" data-i18n="nav.events">Events</a>
     </div>
     <a href="index.html" class="nav__logo"><span class="nav__logo-prefix">Beauty with </span><span
         class="nav__logo-eve">EVE</span></a>
     <div class="nav__right">
-      <a href="services.html" class="active">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="services.html" class="active" data-i18n="nav.services">Services</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </div>
-    <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+    <div class="nav__lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Open navigation menu" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="nav-mobile">
       <span></span><span></span><span></span>
     </button>
   </nav>
   <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="events.html">Events</a>
-    <a href="services.html" class="active">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="events.html" data-i18n="nav.events">Events</a>
+    <a href="services.html" class="active" data-i18n="nav.services">Services</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="nav__mobile-lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
   </div>
 
   <main id="main-content">
@@ -168,9 +180,9 @@
     <!-- ── HERO ── -->
     <section class="hero-drape subpage-hero">
       <div class="hero-drape__inner subpage-hero__inner">
-        <div class="hero-drape__eyebrow">Draping &amp; Consulting</div>
-        <h1 class="hero-drape__title">Services <em>&amp; Pricing</em></h1>
-        <p class="hero-drape__subtitle">
+        <div class="hero-drape__eyebrow" data-i18n="services.hero.eyebrow">Draping &amp; Consulting</div>
+        <h1 class="hero-drape__title" data-i18n-html="services.hero.title">Services <em>&amp; Pricing</em></h1>
+        <p class="hero-drape__subtitle" data-i18n="services.hero.subtitle">
           Colour sessions for individuals and corporate teams — find the package that fits you.
         </p>
       </div>
@@ -180,32 +192,32 @@
     <section class="services-section">
       <div class="services-block">
         <div class="services-block__header fade-in">
-          <div class="drape-reveal__label">For Individuals</div>
-          <h2 class="services-block__title">1-on-1 Colour Analysis</h2>
+          <div class="drape-reveal__label" data-i18n="services.individual.label">For Individuals</div>
+          <h2 class="services-block__title" data-i18n="services.individual.title">1-on-1 Colour Analysis</h2>
         </div>
         <div class="services-grid services-grid--individual">
           <div class="service-package service-package--personal fade-in">
             <div class="service-package__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
-            <div class="service-package__type">Signature Session</div>
-            <h3 class="service-package__title">Signature Draping Session</h3>
-            <div class="service-package__price">From RM 450 · per person</div>
+            <div class="service-package__type" data-i18n="services.signature.type">Signature Session</div>
+            <h3 class="service-package__title" data-i18n="services.signature.title">Signature Draping Session</h3>
+            <div class="service-package__price" data-i18n="services.signature.price">From RM 450 · per person</div>
             <img
               class="service-package__img"
               src="assets/images/common/event-placeholder.png"
               alt="Luxury colour draping setup — seasonal fabric swatches arranged for a personal colour analysis session"
               width="760" height="427"
               loading="lazy">
-            <p class="service-package__desc">A comprehensive 2-hour one-on-one session using 12-season luxury fabric drapes to discover your unique sub-season and the specific hues that make your skin glow, eyes brighten, and features lift.</p>
+            <p class="service-package__desc" data-i18n="services.signature.desc">A comprehensive 2-hour one-on-one session using 12-season luxury fabric drapes to discover your unique sub-season and the specific hues that make your skin glow, eyes brighten, and features lift.</p>
             <ul class="service-list">
-              <li>In-depth colour theory education</li>
-              <li>Detailed analysis of your primary and sub-season</li>
-              <li>Premium digital colour palette guide</li>
-              <li>Makeup, jewellery &amp; hair tone recommendations</li>
-              <li>Personal Colour Card &amp; Consultation Report</li>
+              <li data-i18n="services.signature.li1">In-depth colour theory education</li>
+              <li data-i18n="services.signature.li2">Detailed analysis of your primary and sub-season</li>
+              <li data-i18n="services.signature.li3">Premium digital colour palette guide</li>
+              <li data-i18n="services.signature.li4">Makeup, jewellery &amp; hair tone recommendations</li>
+              <li data-i18n="services.signature.li5">Personal Colour Card &amp; Consultation Report</li>
             </ul>
-            <a href="contact.html" class="hero-drape__btn hero-drape__btn--full">Book a Session</a>
+            <a href="contact.html" class="hero-drape__btn hero-drape__btn--full" data-i18n="services.signature.cta">Book a Session</a>
           </div>
         </div>
       </div>
@@ -222,9 +234,9 @@
     <section class="services-section services-section--corporate">
       <div class="services-block">
         <div class="services-block__header fade-in">
-          <div class="drape-reveal__label">For Organisations</div>
-          <h2 class="services-block__title">Corporate Programmes</h2>
-          <p class="services-block__subtitle">All sessions are customised to your team size and goals. Contact us for a tailored quote.</p>
+          <div class="drape-reveal__label" data-i18n="services.corp.label">For Organisations</div>
+          <h2 class="services-block__title" data-i18n="services.corp.title">Corporate Programmes</h2>
+          <p class="services-block__subtitle" data-i18n="services.corp.subtitle">All sessions are customised to your team size and goals. Contact us for a tailored quote.</p>
         </div>
         <div class="services-grid services-grid--three">
 
@@ -233,56 +245,56 @@
             <div class="service-package__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
             </div>
-            <div class="service-package__type">Event Activation</div>
-            <h3 class="service-package__title">Retail Events</h3>
-            <div class="service-package__price">From RM 1,500 · per session</div>
+            <div class="service-package__type" data-i18n="services.retail.type">Event Activation</div>
+            <h3 class="service-package__title" data-i18n="services.retail.title">Retail Events</h3>
+            <div class="service-package__price" data-i18n="services.retail.price">From RM 1,500 · per session</div>
             <img
               class="service-package__img"
               src="assets/images/common/event-placeholder.png"
               alt="Colour analysis activation at a retail event — guests receiving personal colour consultations"
               width="760" height="427"
               loading="lazy">
-            <p class="service-package__desc">Bring colour analysis to your event floor. Each guest receives a short personal consultation and product recommendations tied directly to your brand's range.</p>
+            <p class="service-package__desc" data-i18n="services.retail.desc">Bring colour analysis to your event floor. Each guest receives a short personal consultation and product recommendations tied directly to your brand's range.</p>
             <ul class="service-list">
-              <li>10–15 min consultation per guest</li>
-              <li>1:1 personal colour analysis</li>
-              <li>Colour recommendations tied to your product range</li>
-              <li>Personal Colour Card per guest</li>
-              <li>Consultation Report Card per guest</li>
+              <li data-i18n="services.retail.li1">10–15 min consultation per guest</li>
+              <li data-i18n="services.retail.li2">1:1 personal colour analysis</li>
+              <li data-i18n="services.retail.li3">Colour recommendations tied to your product range</li>
+              <li data-i18n="services.retail.li4">Personal Colour Card per guest</li>
+              <li data-i18n="services.retail.li5">Consultation Report Card per guest</li>
             </ul>
             <div class="service-package__tags">
-              <span class="service-tag">Launch &amp; Exhibition</span>
-              <span class="service-tag">Product Promotion</span>
+              <span class="service-tag" data-i18n="services.retail.tag1">Launch &amp; Exhibition</span>
+              <span class="service-tag" data-i18n="services.retail.tag2">Product Promotion</span>
             </div>
             <!-- Organiser details -->
             <details class="service-package__organiser">
               <summary class="service-package__organiser-heading">
-                Organiser details
+                <span data-i18n="services.organiser">Organiser details</span>
                 <svg class="organiser-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </summary>
               <ul class="service-list service-list--organiser">
-                <li>Serves 15–30 guests per 4-hour session</li>
-                <li>Additional capacity available with a second analyst</li>
-                <li>Post-event guest summary report included</li>
-                <li>Co-branded Colour Cards with your logo (optional add-on)</li>
+                <li data-i18n="services.retail.org1">Serves 15–30 guests per 4-hour session</li>
+                <li data-i18n="services.retail.org2">Additional capacity available with a second analyst</li>
+                <li data-i18n="services.retail.org3">Post-event guest summary report included</li>
+                <li data-i18n="services.retail.org4">Co-branded Colour Cards with your logo (optional add-on)</li>
               </ul>
               <div class="service-package__logistics">
                 <div class="service-package__logistics-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-                  Table space: approx. 1.5 × 1.5 m
+                  <span data-i18n="services.retail.log1">Table space: approx. 1.5 × 1.5 m</span>
                 </div>
                 <div class="service-package__logistics-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-                  Natural or daylight-balanced lighting preferred
+                  <span data-i18n="services.retail.log2">Natural or daylight-balanced lighting preferred</span>
                 </div>
                 <div class="service-package__logistics-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Half-day (4 hrs) or full-day (8 hrs) options
+                  <span data-i18n="services.retail.log3">Half-day (4 hrs) or full-day (8 hrs) options</span>
                 </div>
               </div>
-              <p class="service-package__geo-note">Book at least 2 weeks in advance. Travel outside Klang Valley available — quoted separately.</p>
+              <p class="service-package__geo-note" data-i18n="services.retail.geo">Book at least 2 weeks in advance. Travel outside Klang Valley available — quoted separately.</p>
             </details>
-            <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark hero-drape__btn--full">Request a Quote</a>
+            <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark hero-drape__btn--full" data-i18n="services.cta.quote">Request a Quote</a>
           </div>
 
           <!-- Small Group -->
@@ -290,51 +302,51 @@
             <div class="service-package__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <div class="service-package__type">Small Group</div>
-            <h3 class="service-package__title">Drape Party</h3>
-            <div class="service-package__price">From RM 1,200 · per session</div>
+            <div class="service-package__type" data-i18n="services.drape.type">Small Group</div>
+            <h3 class="service-package__title" data-i18n="services.drape.title">Drape Party</h3>
+            <div class="service-package__price" data-i18n="services.drape.price">From RM 1,200 · per session</div>
             <img
               class="service-package__img"
               src="assets/images/common/event-placeholder.png"
               alt="Drape Party — a small group of guests enjoying personal colour draping together"
               width="760" height="427"
               loading="lazy">
-            <p class="service-package__desc">An intimate group experience — 4 to 12 guests enjoy a colour theory session followed by individual draping in a relaxed, celebratory setting.</p>
+            <p class="service-package__desc" data-i18n="services.drape.desc">An intimate group experience — 4 to 12 guests enjoy a colour theory session followed by individual draping in a relaxed, celebratory setting.</p>
             <ul class="service-list">
-              <li>4–12 pax · 3–4 hours</li>
-              <li>Personal colour theory presentation</li>
-              <li>1:1 draping for every guest</li>
-              <li>Personal Colour Card per guest</li>
-              <li>Consultation Report Card per guest</li>
+              <li data-i18n="services.drape.li1">4–12 pax · 3–4 hours</li>
+              <li data-i18n="services.drape.li2">Personal colour theory presentation</li>
+              <li data-i18n="services.drape.li3">1:1 draping for every guest</li>
+              <li data-i18n="services.drape.li4">Personal Colour Card per guest</li>
+              <li data-i18n="services.drape.li5">Consultation Report Card per guest</li>
             </ul>
             <div class="service-package__tags">
-              <span class="service-tag">Employee Appreciation</span>
-              <span class="service-tag">VIP Client Events</span>
+              <span class="service-tag" data-i18n="services.drape.tag1">Employee Appreciation</span>
+              <span class="service-tag" data-i18n="services.drape.tag2">VIP Client Events</span>
             </div>
             <!-- Organiser details -->
             <details class="service-package__organiser">
               <summary class="service-package__organiser-heading">
-                Organiser details
+                <span data-i18n="services.organiser">Organiser details</span>
                 <svg class="organiser-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </summary>
               <ul class="service-list service-list--organiser">
-                <li>Organiser receives a group colour summary after the session</li>
-                <li>Can be hosted at your venue or a private studio space</li>
-                <li>Ideal for team bonding, milestone celebrations, or VIP client gifting</li>
+                <li data-i18n="services.drape.org1">Organiser receives a group colour summary after the session</li>
+                <li data-i18n="services.drape.org2">Can be hosted at your venue or a private studio space</li>
+                <li data-i18n="services.drape.org3">Ideal for team bonding, milestone celebrations, or VIP client gifting</li>
               </ul>
               <div class="service-package__logistics">
                 <div class="service-package__logistics-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-                  Quiet room with seating for all guests
+                  <span data-i18n="services.drape.log1">Quiet room with seating for all guests</span>
                 </div>
                 <div class="service-package__logistics-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-                  Good natural or warm white lighting
+                  <span data-i18n="services.drape.log2">Good natural or warm white lighting</span>
                 </div>
               </div>
-              <p class="service-package__geo-note">Book at least 2 weeks in advance. Venue setup details confirmed at briefing.</p>
+              <p class="service-package__geo-note" data-i18n="services.drape.geo">Book at least 2 weeks in advance. Venue setup details confirmed at briefing.</p>
             </details>
-            <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark hero-drape__btn--full">Request a Quote</a>
+            <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark hero-drape__btn--full" data-i18n="services.cta.quote">Request a Quote</a>
           </div>
 
           <!-- Group Workshop -->
@@ -342,52 +354,52 @@
             <div class="service-package__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
             </div>
-            <div class="service-package__type">Large Group</div>
-            <h3 class="service-package__title">Team Workshop</h3>
-            <div class="service-package__price">From RM 3,500 · per session</div>
+            <div class="service-package__type" data-i18n="services.team.type">Large Group</div>
+            <h3 class="service-package__title" data-i18n="services.team.title">Team Workshop</h3>
+            <div class="service-package__price" data-i18n="services.team.price">From RM 3,500 · per session</div>
             <img
               class="service-package__img"
               src="assets/images/common/event-placeholder.png"
               alt="Corporate team workshop — large group attending a colour theory and draping session"
               width="760" height="427"
               loading="lazy">
-            <p class="service-package__desc">A structured 3-hour programme for large teams — combining a presentation, live draping demo, and a guided self-check activity every attendee can do themselves.</p>
+            <p class="service-package__desc" data-i18n="services.team.desc">A structured 3-hour programme for large teams — combining a presentation, live draping demo, and a guided self-check activity every attendee can do themselves.</p>
             <ul class="service-list">
-              <li>50–100 pax · 3 hours</li>
-              <li>Colour theory presentation (slides provided)</li>
-              <li>Live draping demonstration (1–2 pax on stage)</li>
-              <li>Personal Colour Self-check Kit per attendee</li>
+              <li data-i18n="services.team.li1">50–100 pax · 3 hours</li>
+              <li data-i18n="services.team.li2">Colour theory presentation (slides provided)</li>
+              <li data-i18n="services.team.li3">Live draping demonstration (1–2 pax on stage)</li>
+              <li data-i18n="services.team.li4">Personal Colour Self-check Kit per attendee</li>
             </ul>
             <div class="service-package__tags">
-              <span class="service-tag">Employee Engagement</span>
-              <span class="service-tag">Grooming &amp; Training</span>
-              <span class="service-tag service-tag--hrdc">HRDC-Claimable</span>
+              <span class="service-tag" data-i18n="services.team.tag1">Employee Engagement</span>
+              <span class="service-tag" data-i18n="services.team.tag2">Grooming &amp; Training</span>
+              <span class="service-tag service-tag--hrdc" data-i18n="services.team.tag3">HRDC-Claimable</span>
             </div>
             <!-- Organiser details -->
             <details class="service-package__organiser">
               <summary class="service-package__organiser-heading">
-                Organiser details
+                <span data-i18n="services.organiser">Organiser details</span>
                 <svg class="organiser-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
               </summary>
               <ul class="service-list service-list--organiser">
-                <li>HRDC / PSMB levy claimable — Evelynn is a registered HRD Corp trainer</li>
-                <li>Full documentation provided: invoice, attendance sheet, certificate of completion</li>
-                <li>Projector, screen, and PA system required (organiser to arrange)</li>
-                <li>Post-workshop summary report for HR records</li>
+                <li data-i18n="services.team.org1">HRDC / PSMB levy claimable — Evelynn is a registered HRD Corp trainer</li>
+                <li data-i18n="services.team.org2">Full documentation provided: invoice, attendance sheet, certificate of completion</li>
+                <li data-i18n="services.team.org3">Projector, screen, and PA system required (organiser to arrange)</li>
+                <li data-i18n="services.team.org4">Post-workshop summary report for HR records</li>
               </ul>
               <div class="service-package__logistics">
                 <div class="service-package__logistics-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-                  Training room / auditorium for 50–100 pax
+                  <span data-i18n="services.team.log1">Training room / auditorium for 50–100 pax</span>
                 </div>
                 <div class="service-package__logistics-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/></svg>
-                  Projector / screen and PA system (by organiser)
+                  <span data-i18n="services.team.log2">Projector / screen and PA system (by organiser)</span>
                 </div>
               </div>
-              <p class="service-package__geo-note">Book at least 3 weeks in advance for HRDC documentation to be prepared. Travel outside KL available.</p>
+              <p class="service-package__geo-note" data-i18n="services.team.geo">Book at least 3 weeks in advance for HRDC documentation to be prepared. Travel outside KL available.</p>
             </details>
-            <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark hero-drape__btn--full">Request a Quote</a>
+            <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark hero-drape__btn--full" data-i18n="services.cta.quote">Request a Quote</a>
           </div>
 
         </div>
@@ -398,28 +410,28 @@
             <div class="service-package__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
-            <div class="service-package__type">Bespoke Advisory</div>
-            <h3 class="service-package__title">Corporate Consultation</h3>
-            <div class="service-package__price">From RM 500 · 90 minutes</div>
-            <p class="service-package__desc">A focused strategy session for brand managers, event planners, and HR leads — explore how colour analysis fits your audience before committing to a full activation. Ideal if you're planning an event and want a tailored brief first.</p>
+            <div class="service-package__type" data-i18n="services.consult.type">Bespoke Advisory</div>
+            <h3 class="service-package__title" data-i18n="services.consult.title">Corporate Consultation</h3>
+            <div class="service-package__price" data-i18n="services.consult.price">From RM 500 · 90 minutes</div>
+            <p class="service-package__desc" data-i18n="services.consult.desc">A focused strategy session for brand managers, event planners, and HR leads — explore how colour analysis fits your audience before committing to a full activation. Ideal if you're planning an event and want a tailored brief first.</p>
             <ul class="service-list">
-              <li>90-minute advisory session (in-person or virtual)</li>
-              <li>Audience profiling and format recommendation</li>
-              <li>Custom activation brief document</li>
-              <li>Pricing estimate for your chosen format</li>
-              <li>No obligation to proceed</li>
+              <li data-i18n="services.consult.li1">90-minute advisory session (in-person or virtual)</li>
+              <li data-i18n="services.consult.li2">Audience profiling and format recommendation</li>
+              <li data-i18n="services.consult.li3">Custom activation brief document</li>
+              <li data-i18n="services.consult.li4">Pricing estimate for your chosen format</li>
+              <li data-i18n="services.consult.li5">No obligation to proceed</li>
             </ul>
             <div class="service-package__tags">
-              <span class="service-tag">Brand Managers</span>
-              <span class="service-tag">Event Planners</span>
-              <span class="service-tag">HR Leads</span>
+              <span class="service-tag" data-i18n="services.consult.tag1">Brand Managers</span>
+              <span class="service-tag" data-i18n="services.consult.tag2">Event Planners</span>
+              <span class="service-tag" data-i18n="services.consult.tag3">HR Leads</span>
             </div>
-            <a href="contact.html" class="hero-drape__btn hero-drape__btn--full">Book a Consultation</a>
+            <a href="contact.html" class="hero-drape__btn hero-drape__btn--full" data-i18n="services.consult.cta">Book a Consultation</a>
           </div>
         </div>
 
         <!-- Geographic coverage note -->
-        <p class="services-geo-note fade-in">
+        <p class="services-geo-note fade-in" data-i18n-html="services.geo">
           <strong>Based in Kuala Lumpur</strong> — all Klang Valley events included at no travel cost. Events in Penang, Johor Bahru, and other cities are available; travel and accommodation quoted separately. Contact Evelynn to discuss your location.
         </p>
 
@@ -429,36 +441,36 @@
     <!-- ── FAQ ── -->
     <section class="faq-drape" id="faq">
       <div class="faq-drape__inner">
-        <div class="drape-reveal__label">Common Enquiries</div>
-        <h2 class="faq-drape__title">Services <em>FAQ</em></h2>
-        <p style="color:var(--text-secondary);max-width:520px;margin:0.75rem auto 2rem;font-size:1rem;line-height:1.7;">Answers to common questions about our individual sessions and corporate programmes.</p>
+        <div class="drape-reveal__label" data-i18n="services.faq.label">Common Enquiries</div>
+        <h2 class="faq-drape__title" data-i18n-html="services.faq.title">Services <em>FAQ</em></h2>
+        <p style="color:var(--text-secondary);max-width:520px;margin:0.75rem auto 2rem;font-size:1rem;line-height:1.7;" data-i18n="services.faq.sub">Answers to common questions about our individual sessions and corporate programmes.</p>
 
         <div class="faq-drape__list">
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">What is your geographic coverage for events?</summary>
+            <summary class="faq-drape__question" data-i18n="services.faq.q1">What is your geographic coverage for events?</summary>
             <div class="faq-drape__answer">
-              <p>Beauty with EVE is based in Kuala Lumpur. All events within the Klang Valley are included at no additional travel cost. We are available for events in Penang, Johor Bahru, and other cities across Malaysia; travel and accommodation will be quoted separately based on your location.</p>
+              <p data-i18n="services.faq.a1">Beauty with EVE is based in Kuala Lumpur. All events within the Klang Valley are included at no additional travel cost. We are available for events in Penang, Johor Bahru, and other cities across Malaysia; travel and accommodation will be quoted separately based on your location.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">Is the Team Workshop HRDC-claimable?</summary>
+            <summary class="faq-drape__question" data-i18n="services.faq.q2">Is the Team Workshop HRDC-claimable?</summary>
             <div class="faq-drape__answer">
-              <p>Yes. Evelynn is a registered HRD Corp trainer. We provide all necessary documentation for your levy claim, including the official invoice, attendance sheets, and certificates of completion for all participants.</p>
+              <p data-i18n="services.faq.a2">Yes. Evelynn is a registered HRD Corp trainer. We provide all necessary documentation for your levy claim, including the official invoice, attendance sheets, and certificates of completion for all participants.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">What are the lead times for booking?</summary>
+            <summary class="faq-drape__question" data-i18n="services.faq.q3">What are the lead times for booking?</summary>
             <div class="faq-drape__answer">
-              <p>For individual Signature Draping sessions, we recommend booking 1 week in advance. Corporate activations (Retail Events, Drape Parties) require at least 2 weeks. Team Workshops involving HRDC documentation require a minimum of 3 weeks lead time.</p>
+              <p data-i18n="services.faq.a3">For individual Signature Draping sessions, we recommend booking 1 week in advance. Corporate activations (Retail Events, Drape Parties) require at least 2 weeks. Team Workshops involving HRDC documentation require a minimum of 3 weeks lead time.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">How much does a session cost?</summary>
+            <summary class="faq-drape__question" data-i18n="services.faq.q4">How much does a session cost?</summary>
             <div class="faq-drape__answer">
-              <p>Individual sessions start from RM 450. Retail event activations begin at RM 1,500 per session, and Team Workshops start from RM 3,500. We also offer bespoke Corporate Consultations for event planners starting at RM 500.</p>
+              <p data-i18n="services.faq.a4">Individual sessions start from RM 450. Retail event activations begin at RM 1,500 per session, and Team Workshops start from RM 3,500. We also offer bespoke Corporate Consultations for event planners starting at RM 500.</p>
             </div>
           </details>
         </div>
@@ -474,18 +486,18 @@
 
     <!-- ── SOCIAL PROOF LINK ── -->
     <section class="page-cta fade-in">
-      <p class="about-eyebrow page-cta__eyebrow">See it in action</p>
-      <h2 class="about-heading page-cta__heading">Real clients, <em>real results</em></h2>
+      <p class="about-eyebrow page-cta__eyebrow" data-i18n="services.cta.eyebrow">See it in action</p>
+      <h2 class="about-heading page-cta__heading" data-i18n-html="services.cta.heading">Real clients, <em>real results</em></h2>
       <div class="page-cta__actions">
-        <a href="portfolio.html" class="hero-drape__btn">Browse client gallery</a>
-        <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark">Book your session</a>
+        <a href="portfolio.html" class="hero-drape__btn" data-i18n="services.cta.btn1">Browse client gallery</a>
+        <a href="contact.html" class="hero-drape__btn hero-drape__btn--outline-dark" data-i18n="services.cta.btn2">Book your session</a>
       </div>
     </section>
 
     <!-- ── WAVE ── -->
     <div class="wave-divider wave-divider--bg">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="none" aria-hidden="true">
-        
+
         <path d="M0 25 C360 55 720 10 1080 45 C1260 62 1380 35 1440 25 L1440 80 L0 80Z" fill="#FFFFF0" />
       </svg>
     </div>
@@ -495,16 +507,17 @@
   <!-- ── FOOTER ── -->
   <footer class="footer-drape" id="site-footer">
     <a href="index.html" class="footer-drape__logo"><span class="logo-prefix">Beauty with </span><span class="logo-eve">EVE</span></a>
-    <nav class="footer-drape__links" aria-label="Footer navigation">
-      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" rel="noopener noreferrer" target="_blank">
+    <nav class="footer-drape__links" aria-label="Footer navigation" data-i18n-aria-label="footer.nav_aria">
+      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" data-i18n-aria-label="footer.instagram_aria" rel="noopener noreferrer" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        Instagram
+        <span data-i18n="footer.instagram">Instagram</span>
       </a>
     </nav>
-    <div class="footer-drape__tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
-    <div class="footer-drape__copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
+    <div class="footer-drape__tagline" data-i18n="footer.tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
+    <div class="footer-drape__copy" data-i18n="footer.copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
   </footer>
 
+  <script src="assets/js/translations.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </body>
 
