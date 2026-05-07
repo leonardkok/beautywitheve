@@ -2084,7 +2084,17 @@ address {
   }
 
   .hero-drape__brands {
-    margin-top: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Give the credentials block breathing room before the EVELYNN KOO eyebrow
+     line — the default 16px flex gap reads as cramped on a mobile viewport. */
+  .hero-drape__credentials {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-drape__left .hero-drape__eyebrow {
+    margin-top: 0.5rem;
   }
 
   .drape-reveal {
@@ -3047,6 +3057,22 @@ address {
 .wave-divider--hero svg {
   height: 100%;
   filter: drop-shadow(0 -16px 40px rgba(255, 205, 207, 0.8)) drop-shadow(0 -8px 20px rgba(255, 205, 207, 0.6));
+}
+
+/* On mobile the hero's brands list and other ordered children extend further
+   down, so the desktop wave overlap (margin-top: -200px) drops the pink fill
+   on top of the brand pills. Reset to a standard divider height on mobile. */
+@media (max-width: 768px) {
+  .wave-divider--hero {
+    height: 80px;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  .wave-divider--hero svg {
+    height: 80px;
+    filter: none;
+  }
 }
 
 /* ── Why Colour Analysis section ── */
