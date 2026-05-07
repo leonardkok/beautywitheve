@@ -1890,6 +1890,18 @@ address {
     padding: 1rem 1.5rem;
   }
 
+  /* Once scrolled, the nav becomes position:fixed and overlays the hero. The
+     desktop translucent rgba(255,255,255,0.22) background lets dark serif
+     headings read clearly through the pill on mobile — make it opaque enough
+     to mask underlying text without losing the soft glassy feel, and snug it
+     to the top edge so content doesn't peek above the pill while scrolling. */
+  .nav.scrolled {
+    top: 0;
+    background: rgba(255, 250, 220, 0.94);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 24px rgba(61, 59, 47, 0.10);
+  }
+
   .nav__left {
     display: none;
   }
@@ -2036,11 +2048,15 @@ address {
     width: 100%;
   }
 
-  .hero-drape__eyebrow { order: 3; }
-  .hero-drape__title { order: 4; margin-bottom: 0.5rem; }
-  .hero-drape__subtitle { order: 5; margin-bottom: 1rem; }
-  .hero-drape__btn { order: 6; margin: 0 auto 1.5rem; }
-  .hero-drape__brands { order: 7; }
+  /* Scope order rules to the homepage hero column only — applying these
+     globally caused other flex containers (e.g. .contact-info on contact.html,
+     where .hero-drape__title/eyebrow/subtitle live alongside an <address> block)
+     to render the un-ordered children before the ordered ones. */
+  .hero-drape__left .hero-drape__eyebrow { order: 3; }
+  .hero-drape__left .hero-drape__title { order: 4; margin-bottom: 0.5rem; }
+  .hero-drape__left .hero-drape__subtitle { order: 5; margin-bottom: 1rem; }
+  .hero-drape__left .hero-drape__btn { order: 6; margin: 0 auto 1.5rem; }
+  .hero-drape__left .hero-drape__brands { order: 7; }
 
   /* Portrait: flush to bottom of container, no dead zone above */
   .hero-drape__portrait {
