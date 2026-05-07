@@ -52,6 +52,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="alternate" hreflang="en-MY" href="https://beautywitheve.com/about">
+  <link rel="alternate" hreflang="zh" href="https://beautywitheve.com/about?lang=zh">
+  <link rel="alternate" hreflang="ms" href="https://beautywitheve.com/about?lang=ms">
   <link rel="alternate" hreflang="x-default" href="https://beautywitheve.com/about">
   <style>
     :root {
@@ -87,32 +89,42 @@
 </head>
 
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="skip.main">Skip to main content</a>
 
   <nav class="nav" id="nav" aria-label="Main navigation">
     <div class="nav__left">
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="events.html">Events</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="events.html" data-i18n="nav.events">Events</a>
     </div>
     <a href="index.html" class="nav__logo"><span class="nav__logo-prefix">Beauty with </span><span
         class="nav__logo-eve">EVE</span></a>
     <div class="nav__right">
-      <a href="services.html">Services</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="about.html" class="active" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </div>
-    <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+    <div class="nav__lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Open navigation menu" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="nav-mobile">
       <span></span><span></span><span></span>
     </button>
   </nav>
   <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="events.html">Events</a>
-    <a href="services.html">Services</a>
-    <a href="about.html" class="active">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="events.html" data-i18n="nav.events">Events</a>
+    <a href="services.html" data-i18n="nav.services">Services</a>
+    <a href="about.html" class="active" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="nav__mobile-lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
   </div>
 
   <main id="main-content">
@@ -120,7 +132,7 @@
     <!-- ── HERO / FOUNDER ── -->
     <section class="hero-drape about-hero-section">
       <div class="hero-drape__inner about-hero__inner">
-        
+
         <div class="about-hero__visual fade-in">
           <div class="about-hero__frame" aria-hidden="true"></div>
           <img loading="lazy"
@@ -130,15 +142,15 @@
         </div>
 
         <div class="about-hero__content fade-in">
-          <div class="hero-drape__eyebrow">Founder & Lead Analyst</div>
-          <h1 class="hero-drape__title">
+          <div class="hero-drape__eyebrow" data-i18n="about.eyebrow">Founder & Lead Analyst</div>
+          <h1 class="hero-drape__title" data-i18n-html="about.title">
             Hi, I'm<br><em>Evelynn Koo</em>
           </h1>
-          <p class="hero-drape__subtitle about-hero__lead">
+          <p class="hero-drape__subtitle about-hero__lead" data-i18n="about.lead">
             I created Beauty with EVE because I believe the right colours don't just change how you look — they
             profoundly change how you carry yourself in the world.
           </p>
-          <p class="about-hero__bio">
+          <p class="about-hero__bio" data-i18n="about.bio">
             With a background in styling and certified colour science training, I developed an eye for the subtle ways
             that undertones interact with natural complexions. My approach to draping is gentle, educational, and deeply
             transformative.
@@ -159,13 +171,13 @@
             loading="lazy">
         </div>
         <div class="debeau-section__text">
-          <div class="about-eyebrow">Also At</div>
+          <div class="about-eyebrow" data-i18n="about.debeau.eyebrow">Also At</div>
           <div class="debeau-section__name">déBeau Beauty Academy</div>
-          <div class="debeau-section__role">Head of Operation</div>
-          <p class="about-body">
+          <div class="debeau-section__role" data-i18n="about.debeau.role">Head of Operation</div>
+          <p class="about-body" data-i18n="about.debeau.p1">
             At déBeau Beauty Academy, we believe beauty is never "one size fits all." True beauty comes from a personalised approach, understanding what brings out the best in each individual.
           </p>
-          <p class="about-body">
+          <p class="about-body" data-i18n="about.debeau.p2">
             Our mission is to help people discover their most authentic selves. From identifying personal colour palettes to nurturing healthy, radiant skin, we go beyond enhancing outer appearance. We empower our clients with the inner confidence to shine in every aspect of life.
           </p>
         </div>
@@ -185,16 +197,17 @@
   <!-- ── FOOTER ── -->
   <footer class="footer-drape" id="site-footer">
     <a href="index.html" class="footer-drape__logo"><span class="logo-prefix">Beauty with </span><span class="logo-eve">EVE</span></a>
-    <nav class="footer-drape__links" aria-label="Footer navigation">
-      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" rel="noopener noreferrer" target="_blank">
+    <nav class="footer-drape__links" aria-label="Footer navigation" data-i18n-aria-label="footer.nav_aria">
+      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" data-i18n-aria-label="footer.instagram_aria" rel="noopener noreferrer" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        Instagram
+        <span data-i18n="footer.instagram">Instagram</span>
       </a>
     </nav>
-    <div class="footer-drape__tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
-    <div class="footer-drape__copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
+    <div class="footer-drape__tagline" data-i18n="footer.tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
+    <div class="footer-drape__copy" data-i18n="footer.copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
   </footer>
 
+  <script src="assets/js/translations.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </body>
 

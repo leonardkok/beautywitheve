@@ -94,6 +94,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="alternate" hreflang="en-MY" href="https://beautywitheve.com/">
+  <link rel="alternate" hreflang="zh" href="https://beautywitheve.com/?lang=zh">
+  <link rel="alternate" hreflang="ms" href="https://beautywitheve.com/?lang=ms">
   <link rel="alternate" hreflang="x-default" href="https://beautywitheve.com/">
   <meta name="author" content="Evelynn Koo">
   <meta property="og:image"
@@ -157,32 +159,42 @@
 </head>
 
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link" data-i18n="skip.main">Skip to main content</a>
 
   <nav class="nav" id="nav" aria-label="Main navigation">
     <div class="nav__left">
-      <a href="index.html" class="active">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="events.html">Events</a>
+      <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+      <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="events.html" data-i18n="nav.events">Events</a>
     </div>
     <a href="index.html" class="nav__logo"><span class="nav__logo-prefix">Beauty with </span><span
         class="nav__logo-eve">EVE</span></a>
     <div class="nav__right">
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </div>
-    <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+    <div class="nav__lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Open navigation menu" data-i18n-aria-label="nav.menu" aria-expanded="false" aria-controls="nav-mobile">
       <span></span><span></span><span></span>
     </button>
   </nav>
   <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
-    <a href="index.html" class="active">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="events.html">Events</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+    <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="events.html" data-i18n="nav.events">Events</a>
+    <a href="services.html" data-i18n="nav.services">Services</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <div class="nav__mobile-lang" role="group" aria-label="Language switcher">
+      <button type="button" class="nav__lang-btn" data-lang="en">EN</button>
+      <button type="button" class="nav__lang-btn" data-lang="zh" lang="zh">中文</button>
+      <button type="button" class="nav__lang-btn" data-lang="ms">BM</button>
+    </div>
   </div>
 
   <main id="main-content">
@@ -193,19 +205,19 @@
 
       <div class="hero-drape__inner">
         <div class="hero-drape__left">
-          <div class="hero-drape__eyebrow">Evelynn Koo</div>
-          <h1 class="hero-drape__title">
+          <div class="hero-drape__eyebrow" data-i18n="index.eyebrow">Evelynn Koo</div>
+          <h1 class="hero-drape__title" data-i18n-html="index.hero.title">
             Discover your<br><em>true colours</em>
           </h1>
-          <p class="hero-drape__subtitle">
+          <p class="hero-drape__subtitle" data-i18n-html="index.hero.subtitle">
             Personal colour analysis and corporate image workshops in Malaysia<br>
             — revealing the palette that's been yours all along.
           </p>
-          <a href="contact.html" class="hero-drape__btn">Begin the draping &rarr;</a>
+          <a href="contact.html" class="hero-drape__btn" data-i18n="index.hero.cta">Begin the draping &rarr;</a>
 
           <div class="hero-drape__brands">
             <div class="hero-drape__brands-title">
-              <span>Works with</span>
+              <span data-i18n="index.brands.label">Works with</span>
               <div class="hero-drape__brands-list">
                 <a href="events.html" class="brand-link">Coach</a>
                 <a href="events.html" class="brand-link">Shu Uemura</a>
@@ -213,7 +225,7 @@
                 <a href="events.html" class="brand-link">3CE</a>
               </div>
             </div>
-            <div class="hero-drape__brands-sub">Collaborating with beauty and lifestyle icons to curate visual
+            <div class="hero-drape__brands-sub" data-i18n="index.brands.sub">Collaborating with beauty and lifestyle icons to curate visual
               excellence</div>
           </div>
         </div>
@@ -221,18 +233,18 @@
         <div class="hero-drape__right">
           <div class="hero-drape__credentials">
             <div class="credential-item fade-in" style="transition-delay: 0.1s">
-              <p class="credential-title">Empowered Over 200 Individuals</p>
-              <p class="credential-desc">Through engaging events and personalized one-on-one sessions</p>
+              <p class="credential-title" data-i18n="index.cred.1.title">Empowered Over 200 Individuals</p>
+              <p class="credential-desc" data-i18n="index.cred.1.desc">Through engaging events and personalized one-on-one sessions</p>
             </div>
             <div class="credential-divider fade-in" style="transition-delay: 0.25s"></div>
             <div class="credential-item fade-in" style="transition-delay: 0.4s">
-              <p class="credential-title">Certified Personal Colour Analyst</p>
-              <p class="credential-desc">Professionally trained and certified under a South Korean expert</p>
+              <p class="credential-title" data-i18n="index.cred.2.title">Certified Personal Colour Analyst</p>
+              <p class="credential-desc" data-i18n="index.cred.2.desc">Professionally trained and certified under a South Korean expert</p>
             </div>
             <div class="credential-divider fade-in" style="transition-delay: 0.55s"></div>
             <div class="credential-item fade-in" style="transition-delay: 0.7s">
-              <p class="credential-title">Senior Corporate Consultant</p>
-              <p class="credential-desc">HRD Corp–accredited Trainer (Train-the-Trainer certified)</p>
+              <p class="credential-title" data-i18n="index.cred.3.title">Senior Corporate Consultant</p>
+              <p class="credential-desc" data-i18n="index.cred.3.desc">HRD Corp–accredited Trainer (Train-the-Trainer certified)</p>
             </div>
           </div>
           <div class="hero-drape__visuals">
@@ -255,36 +267,36 @@
     <!-- ── 2. WHY COLOUR ANALYSIS ── -->
     <section class="why-drape" id="why">
       <div class="why-drape__inner">
-        <div class="drape-reveal__label">The Difference</div>
-        <h2 class="drape-reveal__title">Why <em>colour analysis?</em></h2>
+        <div class="drape-reveal__label" data-i18n="index.why.label">The Difference</div>
+        <h2 class="drape-reveal__title" data-i18n-html="index.why.title">Why <em>colour analysis?</em></h2>
         <div class="why-drape__grid">
           <div class="why-drape__card fade-in">
             <div class="why-drape__num">01</div>
-            <h3 class="why-drape__card-title">Look more alive, effortlessly</h3>
-            <p class="why-drape__card-desc">The right colours brighten your complexion, reduce under-eye shadows, and
+            <h3 class="why-drape__card-title" data-i18n="index.why.1.title">Look more alive, effortlessly</h3>
+            <p class="why-drape__card-desc" data-i18n="index.why.1.desc">The right colours brighten your complexion, reduce under-eye shadows, and
               harmonise your natural features — no extra effort needed.</p>
           </div>
           <div class="why-drape__card fade-in">
             <div class="why-drape__num">02</div>
-            <h3 class="why-drape__card-title">Bring colour to your next event</h3>
-            <p class="why-drape__card-desc">From product launches to appreciation parties, colour analysis makes a
+            <h3 class="why-drape__card-title" data-i18n="index.why.2.title">Bring colour to your next event</h3>
+            <p class="why-drape__card-desc" data-i18n="index.why.2.desc">From product launches to appreciation parties, colour analysis makes a
               memorable guest experience — personal, interactive, and on-brand.</p>
           </div>
           <div class="why-drape__card fade-in">
             <div class="why-drape__num">03</div>
-            <h3 class="why-drape__card-title">Strengthen your professional image</h3>
-            <p class="why-drape__card-desc">Colour shapes how others perceive you before you speak. Individuals and
+            <h3 class="why-drape__card-title" data-i18n="index.why.3.title">Strengthen your professional image</h3>
+            <p class="why-drape__card-desc" data-i18n="index.why.3.desc">Colour shapes how others perceive you before you speak. Individuals and
               teams who dress intentionally project more confidence and credibility.</p>
           </div>
           <div class="why-drape__card fade-in">
             <div class="why-drape__num">04</div>
-            <h3 class="why-drape__card-title">Build a wardrobe that works</h3>
-            <p class="why-drape__card-desc">When every piece shares your palette, everything coordinates — fewer
+            <h3 class="why-drape__card-title" data-i18n="index.why.4.title">Build a wardrobe that works</h3>
+            <p class="why-drape__card-desc" data-i18n="index.why.4.desc">When every piece shares your palette, everything coordinates — fewer
               purchases, more outfits, and no more buyer's remorse.</p>
           </div>
         </div>
         <div class="section-link-center">
-          <a href="services.html" class="audience__link">Explore our services <span>→</span></a>
+          <a href="services.html" class="audience__link"><span data-i18n="index.why.cta">Explore our services</span> <span>→</span></a>
         </div>
       </div>
     </section>
@@ -299,8 +311,8 @@
     <!-- ── 3. HOW DRAPING WORKS ── -->
     <section class="experience" id="process">
       <div class="experience__header">
-        <div class="drape-reveal__label">The Process</div>
-        <h2 class="drape-reveal__title">How <em>draping</em> works</h2>
+        <div class="drape-reveal__label" data-i18n="index.process.label">The Process</div>
+        <h2 class="drape-reveal__title" data-i18n-html="index.process.title">How <em>draping</em> works</h2>
       </div>
 
       <img
@@ -314,31 +326,31 @@
         <div class="experience__step fade-in">
           <div class="experience__step-circle step-drape-1"></div>
           <div class="experience__step-num">01</div>
-          <h3 class="experience__step-title">Discover</h3>
-          <p class="experience__step-desc">
+          <h3 class="experience__step-title" data-i18n="index.process.1.title">Discover</h3>
+          <p class="experience__step-desc" data-i18n="index.process.1.desc">
             We begin with a conversation about you — your skin tone, hair, eyes, and the colours you're drawn to.
           </p>
         </div>
         <div class="experience__step fade-in">
           <div class="experience__step-circle step-drape-2"></div>
           <div class="experience__step-num">02</div>
-          <h3 class="experience__step-title">Drape</h3>
-          <p class="experience__step-desc">
+          <h3 class="experience__step-title" data-i18n="index.process.2.title">Drape</h3>
+          <p class="experience__step-desc" data-i18n="index.process.2.desc">
             Fabric swatches in each seasonal palette are held near your face, revealing which colours illuminate you.
           </p>
         </div>
         <div class="experience__step fade-in">
           <div class="experience__step-circle step-drape-3"></div>
           <div class="experience__step-num">03</div>
-          <h3 class="experience__step-title">Reveal</h3>
-          <p class="experience__step-desc">
+          <h3 class="experience__step-title" data-i18n="index.process.3.title">Reveal</h3>
+          <p class="experience__step-desc" data-i18n="index.process.3.desc">
             Your personal palette is unveiled — a curated set of hues, organised by season, to guide every colour
             choice.
           </p>
         </div>
       </div>
       <div class="section-link-center">
-        <a href="about.html" class="audience__link">Meet Evelynn — your colour analyst <span>→</span></a>
+        <a href="about.html" class="audience__link"><span data-i18n="index.process.cta">Meet Evelynn — your colour analyst</span> <span>→</span></a>
       </div>
     </section>
 
@@ -353,8 +365,8 @@
     <section class="stories" id="results">
       <div class="stories__inner">
         <div class="stories__header">
-          <div class="drape-reveal__label">Client Stories</div>
-          <h2 class="drape-reveal__title">Real <em>results</em></h2>
+          <div class="drape-reveal__label" data-i18n="index.stories.label">Client Stories</div>
+          <h2 class="drape-reveal__title" data-i18n-html="index.stories.title">Real <em>results</em></h2>
         </div>
 
         <img
@@ -366,27 +378,27 @@
 
         <div class="stories__grid">
           <div class="story-card fade-in">
-            <span class="story-card__type story-card__type--corp">Event Organiser</span>
-            <blockquote>"Evelynn's activation was the highlight of our launch day. She tied every colour result directly to our product range — guests were <span class="story-highlight">buying on the spot</span> based on their results."</blockquote>
-            <cite>— Brand Manager, Retail Beauty Launch, KL</cite>
+            <span class="story-card__type story-card__type--corp" data-i18n="index.stories.1.type">Event Organiser</span>
+            <blockquote data-i18n-html="index.stories.1.quote">"Evelynn's activation was the highlight of our launch day. She tied every colour result directly to our product range — guests were <span class="story-highlight">buying on the spot</span> based on their results."</blockquote>
+            <cite data-i18n="index.stories.1.cite">— Brand Manager, Retail Beauty Launch, KL</cite>
           </div>
           <div class="story-card fade-in">
-            <span class="story-card__type story-card__type--personal">Personal</span>
-            <blockquote>"I used to buy clothes that looked great on the hanger but drained my face. Now <span
+            <span class="story-card__type story-card__type--personal" data-i18n="index.stories.2.type">Personal</span>
+            <blockquote data-i18n-html="index.stories.2.quote">"I used to buy clothes that looked great on the hanger but drained my face. Now <span
                 class="story-highlight">every piece in
                 my wardrobe works</span> — shopping is effortless."</blockquote>
-            <cite>— Sarah L., Kuala Lumpur</cite>
+            <cite data-i18n="index.stories.2.cite">— Sarah L., Kuala Lumpur</cite>
           </div>
           <div class="story-card fade-in">
-            <span class="story-card__type story-card__type--corp">Corporate</span>
-            <blockquote>"Evelynn ran a session for our 30-person sales team. The engagement was <span
+            <span class="story-card__type story-card__type--corp" data-i18n="index.stories.3.type">Corporate</span>
+            <blockquote data-i18n-html="index.stories.3.quote">"Evelynn ran a session for our 30-person sales team. The engagement was <span
                 class="story-highlight">unlike any team building
                 we've done before."</span></blockquote>
-            <cite>— Director, Tech Company</cite>
+            <cite data-i18n="index.stories.3.cite">— Director, Tech Company</cite>
           </div>
         </div>
         <div class="section-link-center">
-          <a href="portfolio.html" class="audience__link">See the client gallery <span>→</span></a>
+          <a href="portfolio.html" class="audience__link"><span data-i18n="index.stories.cta">See the client gallery</span> <span>→</span></a>
         </div>
       </div>
     </section>
@@ -401,49 +413,49 @@
     <!-- ── 5. SERVICES ── -->
     <section class="audience" id="clients">
       <div class="audience__header fade-in">
-        <div class="drape-reveal__label">What We Offer</div>
-        <h2 class="audience__title">Services</h2>
+        <div class="drape-reveal__label" data-i18n="index.audience.label">What We Offer</div>
+        <h2 class="audience__title" data-i18n="index.audience.title">Services</h2>
       </div>
       <div class="audience__inner">
         <div class="audience__card audience__card--corporate fade-in">
-          <div class="audience__label">For corporate teams</div>
-          <h3>Colour programmes for every team size</h3>
-          <p>From retail event activations to intimate drape parties and large team workshops — tailored to your
+          <div class="audience__label" data-i18n="index.audience.corp.label">For corporate teams</div>
+          <h3 data-i18n="index.audience.corp.title">Colour programmes for every team size</h3>
+          <p data-i18n="index.audience.corp.desc">From retail event activations to intimate drape parties and large team workshops — tailored to your
             headcount and goals.</p>
           <ul>
-            <li>Retail event activations (any pax)</li>
-            <li>Small group drape parties (4–12 pax)</li>
-            <li>Team workshops, HRDC-claimable (50–100 pax)</li>
-            <li>Custom quote based on format &amp; duration</li>
+            <li data-i18n="index.audience.corp.li1">Retail event activations (any pax)</li>
+            <li data-i18n="index.audience.corp.li2">Small group drape parties (4–12 pax)</li>
+            <li data-i18n="index.audience.corp.li3">Team workshops, HRDC-claimable (50–100 pax)</li>
+            <li data-i18n="index.audience.corp.li4">Custom quote based on format &amp; duration</li>
           </ul>
-          <a href="services.html" class="audience__link">View corporate programmes <span>→</span></a>
+          <a href="services.html" class="audience__link"><span data-i18n="index.audience.corp.cta">View corporate programmes</span> <span>→</span></a>
         </div>
         <div class="audience__card audience__card--personal fade-in">
-          <div class="audience__label">For individuals</div>
-          <h3>Discover the colours that make you glow</h3>
-          <p>A gentle, one-on-one draping experience that transforms how you see yourself — and how the world sees you.
+          <div class="audience__label" data-i18n="index.audience.personal.label">For individuals</div>
+          <h3 data-i18n="index.audience.personal.title">Discover the colours that make you glow</h3>
+          <p data-i18n="index.audience.personal.desc">A gentle, one-on-one draping experience that transforms how you see yourself — and how the world sees you.
           </p>
           <ul>
-            <li>Full seasonal colour analysis</li>
-            <li>Personalised colour palette card</li>
-            <li>Makeup shade recommendations</li>
-            <li>Wardrobe colour planning guide</li>
+            <li data-i18n="index.audience.personal.li1">Full seasonal colour analysis</li>
+            <li data-i18n="index.audience.personal.li2">Personalised colour palette card</li>
+            <li data-i18n="index.audience.personal.li3">Makeup shade recommendations</li>
+            <li data-i18n="index.audience.personal.li4">Wardrobe colour planning guide</li>
           </ul>
-          <a href="services.html" class="audience__link">See session details <span>→</span></a>
+          <a href="services.html" class="audience__link"><span data-i18n="index.audience.personal.cta">See session details</span> <span>→</span></a>
         </div>
       </div>
 
       <!-- Social Proof -->
       <div class="proof__inner fade-in">
-        <div class="proof__label">Trusted by individuals & organisations</div>
+        <div class="proof__label" data-i18n="index.proof.label">Trusted by individuals & organisations</div>
         <div class="proof__stats">
           <div>
             <div class="proof__stat-num">200+</div>
-            <div class="proof__stat-desc">Clients colour-analysed</div>
+            <div class="proof__stat-desc" data-i18n="index.proof.1.desc">Clients colour-analysed</div>
           </div>
           <div>
             <div class="proof__stat-num">15+</div>
-            <div class="proof__stat-desc">Corporate workshops</div>
+            <div class="proof__stat-desc" data-i18n="index.proof.2.desc">Corporate workshops</div>
           </div>
         </div>
       </div>
@@ -459,62 +471,62 @@
     <!-- ── FAQ ── -->
     <section class="faq-drape" id="faq">
       <div class="faq-drape__inner">
-        <div class="drape-reveal__label">Got Questions?</div>
-        <h2 class="faq-drape__title">Frequently Asked <em>Questions</em></h2>
+        <div class="drape-reveal__label" data-i18n="index.faq.label">Got Questions?</div>
+        <h2 class="faq-drape__title" data-i18n-html="index.faq.title">Frequently Asked <em>Questions</em></h2>
 
         <div class="faq-drape__list">
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">What should I wear to my draping session?</summary>
+            <summary class="faq-drape__question" data-i18n="index.faq.q1">What should I wear to my draping session?</summary>
             <div class="faq-drape__answer">
-              <p>Please wear neutral clothing with an open neckline so the drapes don't compete with your outfit. We
+              <p data-i18n="index.faq.a1">Please wear neutral clothing with an open neckline so the drapes don't compete with your outfit. We
                 recommend wearing white or removing bulky layers, as we need to observe your natural skin undertones
                 closely next to the fabric.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">Can I wear makeup to the session?</summary>
+            <summary class="faq-drape__question" data-i18n="index.faq.q2">Can I wear makeup to the session?</summary>
             <div class="faq-drape__answer">
-              <p>For the most accurate results, we require you to arrive with a completely bare face. Foundation,
+              <p data-i18n="index.faq.a2">For the most accurate results, we require you to arrive with a completely bare face. Foundation,
                 bronzer, or tinted sunscreen can artificially alter your overtone and skew the results of the draping.
               </p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">How long does a personal analysis take?</summary>
+            <summary class="faq-drape__question" data-i18n="index.faq.q3">How long does a personal analysis take?</summary>
             <div class="faq-drape__answer">
-              <p>A standard 1-on-1 personal colour analysis takes approximately 90 minutes. This gives us ample time to
+              <p data-i18n="index.faq.a3">A standard 1-on-1 personal colour analysis takes approximately 90 minutes. This gives us ample time to
                 evaluate all 12 sub-seasons, discuss makeup and jewellery shades, and walk through your personalised
                 wardrobe palette.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">Do you offer group sessions or corporate events?</summary>
+            <summary class="faq-drape__question" data-i18n="index.faq.q4">Do you offer group sessions or corporate events?</summary>
             <div class="faq-drape__answer">
-              <p>Yes. Corporate programmes include Retail Event activations (any pax), Drape Parties for small groups of 4–12, Team Workshops for 50–100 pax (HRDC-claimable), and bespoke Corporate Consultations for event planners exploring their options. Visit the <a href="services.html">Services page</a> for full details and pricing.</p>
+              <p data-i18n-html="index.faq.a4">Yes. Corporate programmes include Retail Event activations (any pax), Drape Parties for small groups of 4–12, Team Workshops for 50–100 pax (HRDC-claimable), and bespoke Corporate Consultations for event planners exploring their options. Visit the <a href="services.html">Services page</a> for full details and pricing.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">How many guests can you serve at a retail event?</summary>
+            <summary class="faq-drape__question" data-i18n="index.faq.q5">How many guests can you serve at a retail event?</summary>
             <div class="faq-drape__answer">
-              <p>A standard Retail Event session serves 15–30 guests in a 4-hour slot, with each consultation taking 10–15 minutes. For larger events, a second analyst can be arranged. Half-day and full-day bookings are available.</p>
+              <p data-i18n="index.faq.a5">A standard Retail Event session serves 15–30 guests in a 4-hour slot, with each consultation taking 10–15 minutes. For larger events, a second analyst can be arranged. Half-day and full-day bookings are available.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">Can you tie the colour analysis to our brand's products?</summary>
+            <summary class="faq-drape__question" data-i18n="index.faq.q6">Can you tie the colour analysis to our brand's products?</summary>
             <div class="faq-drape__answer">
-              <p>Yes — this is one of the most popular reasons brands book a retail activation. Before the event, Evelynn briefs herself on your product range so every guest leaves with colour recommendations directly matched to your offerings. Co-branded Personal Colour Cards with your logo are also available as an optional add-on.</p>
+              <p data-i18n="index.faq.a6">Yes — this is one of the most popular reasons brands book a retail activation. Before the event, Evelynn briefs herself on your product range so every guest leaves with colour recommendations directly matched to your offerings. Co-branded Personal Colour Cards with your logo are also available as an optional add-on.</p>
             </div>
           </details>
 
           <details class="faq-drape__item fade-in">
-            <summary class="faq-drape__question">How far in advance do I need to book?</summary>
+            <summary class="faq-drape__question" data-i18n="index.faq.q7">How far in advance do I need to book?</summary>
             <div class="faq-drape__answer">
-              <p>For individual sessions, 1 week's notice is usually sufficient. For corporate events (Retail Events, Drape Parties), allow at least 2 weeks. Team Workshops that require HRDC documentation need a minimum of 3 weeks lead time to prepare the paperwork. <a href="contact.html">Get in touch</a> to check current availability.</p>
+              <p data-i18n-html="index.faq.a7">For individual sessions, 1 week's notice is usually sufficient. For corporate events (Retail Events, Drape Parties), allow at least 2 weeks. Team Workshops that require HRDC documentation need a minimum of 3 weeks lead time to prepare the paperwork. <a href="contact.html">Get in touch</a> to check current availability.</p>
             </div>
           </details>
         </div>
@@ -525,15 +537,15 @@
     <section class="cta-drape" id="contact">
       <div class="cta-drape__fabric"></div>
       <div class="cta-drape__inner">
-        <h2 class="cta-drape__headline">
+        <h2 class="cta-drape__headline" data-i18n-html="index.cta.headline">
           Ready to discover<br><em>your colours?</em>
         </h2>
-        <p class="cta-drape__subtitle">
+        <p class="cta-drape__subtitle" data-i18n="index.cta.subtitle">
           Whether it's just you or your whole team — let's find your palette.
         </p>
         <div class="cta-drape__actions">
-          <a href="contact.html" class="cta-drape__btn">Book a personal session →</a>
-          <a href="contact.html" class="cta-drape__btn cta-drape__btn--outline">Enquire about workshops →</a>
+          <a href="contact.html" class="cta-drape__btn" data-i18n="index.cta.btn1">Book a personal session →</a>
+          <a href="contact.html" class="cta-drape__btn cta-drape__btn--outline" data-i18n="index.cta.btn2">Enquire about workshops →</a>
         </div>
         <div class="cta-drape__swatches" aria-hidden="true">
           <div class="cta-drape__dot"></div>
@@ -562,16 +574,17 @@
   <!-- ── FOOTER ── -->
   <footer class="footer-drape" id="site-footer">
     <a href="index.html" class="footer-drape__logo"><span class="logo-prefix">Beauty with </span><span class="logo-eve">EVE</span></a>
-    <nav class="footer-drape__links" aria-label="Footer navigation">
-      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" rel="noopener noreferrer" target="_blank">
+    <nav class="footer-drape__links" aria-label="Footer navigation" data-i18n-aria-label="footer.nav_aria">
+      <a href="https://www.instagram.com/beautywitheve" aria-label="Follow Beauty with EVE on Instagram" data-i18n-aria-label="footer.instagram_aria" rel="noopener noreferrer" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        Instagram
+        <span data-i18n="footer.instagram">Instagram</span>
       </a>
     </nav>
-    <div class="footer-drape__tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
-    <div class="footer-drape__copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
+    <div class="footer-drape__tagline" data-i18n="footer.tagline">Personal Colour Analysis by Evelynn Koo — certified colour analyst &amp; HRD Corp accredited trainer based in Kuala Lumpur, Malaysia.</div>
+    <div class="footer-drape__copy" data-i18n="footer.copy">&copy; 2026 Beauty with EVE &middot; Colour Analysis &amp; Image Consulting &middot; Kuala Lumpur, Malaysia</div>
   </footer>
 
+  <script src="assets/js/translations.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </body>
 
