@@ -1988,7 +1988,7 @@ address {
   .hero-drape__inner {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: flex-start;
     margin-top: 0;
@@ -2084,7 +2084,7 @@ address {
   }
 
   .hero-drape__brands {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   /* Give the credentials block breathing room before the EVELYNN KOO eyebrow
@@ -3061,17 +3061,17 @@ address {
 
 /* On mobile the hero's brands list and other ordered children extend further
    down, so the desktop wave overlap (margin-top: -200px) drops the pink fill
-   on top of the brand pills. Reset to a standard divider height on mobile. */
+   on top of the brand pills. Keep the wave shape visible but stop pulling it
+   into the hero's content area. */
 @media (max-width: 768px) {
   .wave-divider--hero {
-    height: 80px;
+    height: 160px;
     margin-top: 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .wave-divider--hero svg {
-    height: 80px;
-    filter: none;
+    height: 160px;
   }
 }
 
