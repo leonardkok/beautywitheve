@@ -410,7 +410,7 @@ window.BWE_TRANSLATIONS = {
     "index.faq.a6": "可以 — 这是品牌选择零售活动的常见原因之一。活动前，Evelynn 会熟悉你的产品系列，让每位宾客都能获得与你产品直接对应的色彩建议。带有你品牌标志的联名色板卡可作为可选附加项。",
     "index.faq.q7": "我需要提前多久预约？",
     "index.faq.a7": "个人咨询通常提前 1 周即可。企业活动（零售活动、色彩派对）至少需提前 2 周。涉及 HRDC 文件的团队工作坊需提前至少 3 周以准备相关文件。请<a href=\"contact.html\">联系我们</a>查询当前档期。",
-    "index.cta.headline": "准备好发现<br><em>属于你的色彩了吗？</em>",
+    "index.cta.headline": "准备好<em>发现属于你的色彩</em>了吗？",
     "index.cta.subtitle": "无论是你一人，还是整个团队 — 让我们一起找到你的色板。",
     "index.cta.btn1": "预约个人咨询 →",
     "index.cta.btn2": "咨询工作坊 →",

@@ -3956,12 +3956,14 @@ address {
 
 /* ════════════════════════════════════════════════
    Heading line-wrap polish
-   - text-wrap: balance distributes characters evenly so the last line
-     doesn't get a single orphaned word (e.g. "成果" alone).
-   - For Simplified Chinese, word-break: keep-all keeps runs of CJK
-     characters together so mid-word splits like "分析" → "分" / "析"
-     don't happen; it still allows breaks at CJK punctuation (，。？).
-     overflow-wrap: anywhere is a safety net for long unbroken runs.
+   - text-wrap: balance distributes characters/words evenly across lines
+     so the last line doesn't end up as an orphan (e.g. "成果" or "析"
+     alone on the second line). For CJK, every char is a break
+     opportunity, so balance can place them ~equally across lines.
+   - text-wrap: pretty optimises last-line orphans for longer body text
+     where balance would feel artificial.
+   - line-break: strict applies stricter CJK wrap rules so leading
+     punctuation isn't separated.
    ════════════════════════════════════════════════ */
 .hero-drape__title,
 .hero-drape__subtitle,
@@ -3971,6 +3973,7 @@ address {
 .cta-drape__subtitle,
 .audience__title,
 .faq-drape__title,
+.faq-drape__question,
 .about-heading,
 .page-cta__heading,
 .services-block__title,
@@ -3980,38 +3983,42 @@ address {
 .experience__step-title,
 .why-drape__card-title,
 .service-package__title,
-.service-package__desc,
 .activation-card__title,
 .event-title,
 .portfolio-case__name,
-.portfolio-case__desc,
 .booking-step__title,
-.story-card blockquote,
 .credential-title {
   text-wrap: balance;
+  line-break: strict;
 }
 
-:lang(zh) .hero-drape__title,
-:lang(zh) .hero-drape__subtitle,
-:lang(zh) .hero-drape__eyebrow,
-:lang(zh) .drape-reveal__title,
-:lang(zh) .cta-drape__headline,
-:lang(zh) .cta-drape__subtitle,
-:lang(zh) .audience__title,
-:lang(zh) .faq-drape__title,
-:lang(zh) .about-heading,
-:lang(zh) .page-cta__heading,
-:lang(zh) .services-block__title,
-:lang(zh) .booking-process__heading,
-:lang(zh) .experience__step-title,
-:lang(zh) .why-drape__card-title,
-:lang(zh) .service-package__title,
-:lang(zh) .activation-card__title,
-:lang(zh) .event-title,
-:lang(zh) .portfolio-case__name,
-:lang(zh) .booking-step__title,
-:lang(zh) .credential-title {
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+/* Body-length text: text-wrap: pretty avoids ugly last-line orphans.
+   For pages in Simplified Chinese the browser's `pretty` heuristics
+   don't aggressively reflow 2-character orphans, so we upgrade to
+   `balance` which equalises line lengths. */
+.why-drape__card-desc,
+.service-package__desc,
+.portfolio-case__desc,
+.activation-card__desc,
+.event-body,
+.faq-drape__answer p,
+.story-card blockquote,
+.credential-desc,
+.booking-step__desc,
+.experience__step-desc {
+  text-wrap: pretty;
   line-break: strict;
+}
+
+:lang(zh) .why-drape__card-desc,
+:lang(zh) .service-package__desc,
+:lang(zh) .portfolio-case__desc,
+:lang(zh) .activation-card__desc,
+:lang(zh) .event-body,
+:lang(zh) .faq-drape__answer p,
+:lang(zh) .story-card blockquote,
+:lang(zh) .credential-desc,
+:lang(zh) .booking-step__desc,
+:lang(zh) .experience__step-desc {
+  text-wrap: balance;
 }
