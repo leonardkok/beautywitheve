@@ -2937,6 +2937,7 @@ address {
   align-items: center;
   justify-content: center;
   gap: 2.5rem;
+  padding-top: 6rem;
 }
 
 .nav__mobile.open {
